@@ -1,0 +1,689 @@
+decorators:
+  - operation: Visualizer
+    data:
+      type: Visualizer
+      name: Image
+      visualizer_name: Image
+      visualizer_type: Image
+      arg_names:
+        - data
+      user_unique_name: Image
+    id: '330'
+    inputs:
+      data:
+        - outputKey: non_normalized
+          operation: Input
+          id: '365'
+    outputs: {}
+  - operation: GroundTruth
+    data:
+      type: GroundTruth
+      output_name: mask
+      selected: mask
+    id: '331'
+    inputs: {}
+    outputs:
+      mask:
+        - inputKey: ground_truth
+          operation: CategoricalCrossentropy
+          id: '332'
+        - inputKey: mask
+          operation: Visualizer
+          id: '334'
+        - inputKey: y_true
+          operation: Metric
+          id: '341'
+        - inputKey: y_true
+          operation: Metric
+          id: '342'
+        - inputKey: y_true
+          operation: Metric
+          id: '343'
+        - inputKey: y_true
+          operation: Metric
+          id: '344'
+        - inputKey: y_true
+          operation: Metric
+          id: '345'
+        - inputKey: y_true
+          operation: Metric
+          id: '346'
+        - inputKey: y_true
+          operation: Metric
+          id: '347'
+        - inputKey: y_true
+          operation: Metric
+          id: '348'
+        - inputKey: y_true
+          operation: Metric
+          id: '349'
+        - inputKey: y_true
+          operation: Metric
+          id: '350'
+        - inputKey: y_true
+          operation: Metric
+          id: '351'
+        - inputKey: y_true
+          operation: Metric
+          id: '352'
+        - inputKey: y_true
+          operation: Metric
+          id: '353'
+        - inputKey: y_true
+          operation: Metric
+          id: '354'
+        - inputKey: y_true
+          operation: Metric
+          id: '355'
+        - inputKey: y_true
+          operation: Metric
+          id: '356'
+        - inputKey: y_true
+          operation: Metric
+          id: '357'
+        - inputKey: y_true
+          operation: Metric
+          id: '358'
+        - inputKey: y_true
+          operation: Metric
+          id: '359'
+        - inputKey: y_true
+          operation: Metric
+          id: '360'
+        - inputKey: y_true
+          operation: Metric
+          id: '361'
+        - inputKey: gt
+          operation: Visualizer
+          id: '336'
+  - operation: CategoricalCrossentropy
+    data:
+      type: Loss
+    id: '332'
+    inputs:
+      prediction:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      ground_truth:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs:
+      loss:
+        - inputKey: '0'
+          operation: Adamax
+          id: '333'
+  - operation: Adamax
+    data:
+      type: Optimizer
+      custom_input_keys:
+        - 333-0
+    id: '333'
+    inputs:
+      '0':
+        - outputKey: loss
+          operation: CategoricalCrossentropy
+          id: '332'
+    outputs: {}
+  - operation: Visualizer
+    data:
+      type: Visualizer
+      name: cityscapes_visualizer
+      visualizer_name: cityscapes_visualizer
+      visualizer_type: Image
+      arg_names:
+        - mask
+      user_unique_name: cityscapes_visualizer_gt
+    id: '334'
+    inputs:
+      mask:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Visualizer
+    data:
+      type: Visualizer
+      name: loss_visualizer
+      visualizer_name: loss_visualizer
+      visualizer_type: Image
+      arg_names:
+        - image
+        - prediction
+        - gt
+      user_unique_name: loss_visualizer
+    id: '336'
+    inputs:
+      prediction:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      gt:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+      image:
+        - outputKey: non_normalized
+          operation: Input
+          id: '364'
+    outputs: {}
+  - operation: Visualizer
+    data:
+      type: Visualizer
+      name: mask_visualizer
+      visualizer_name: mask_visualizer
+      visualizer_type: ImageMask
+      arg_names:
+        - image
+        - mask
+      user_unique_name: mask_visualizer
+    id: '337'
+    inputs:
+      mask:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      image:
+        - outputKey: non_normalized
+          operation: Input
+          id: '364'
+    outputs: {}
+  - operation: Visualizer
+    data:
+      type: Visualizer
+      name: cityscapes_visualizer
+      visualizer_name: cityscapes_visualizer
+      visualizer_type: Image
+      arg_names:
+        - mask
+      user_unique_name: cityscapes_visualizer
+    id: '340'
+    inputs:
+      mask:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou
+      metric_name: iou
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou
+    id: '341'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_road
+      metric_name: iou_class_road
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_road
+    id: '342'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_sidewalk
+      metric_name: iou_class_sidewalk
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_sidewalk
+    id: '343'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_building
+      metric_name: iou_class_building
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_building
+    id: '344'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_wall
+      metric_name: iou_class_wall
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_wall
+    id: '345'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_fence
+      metric_name: iou_class_fence
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_fence
+    id: '346'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_pole
+      metric_name: iou_class_pole
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_pole
+    id: '347'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_traffic light
+      metric_name: iou_class_traffic light
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_traffic light
+    id: '348'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_traffic sign
+      metric_name: iou_class_traffic sign
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_traffic sign
+    id: '349'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_vegetation
+      metric_name: iou_class_vegetation
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_vegetation
+    id: '350'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_sky
+      metric_name: iou_class_sky
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_sky
+    id: '351'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_terrain
+      metric_name: iou_class_terrain
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_terrain
+    id: '352'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_sky
+      metric_name: iou_class_sky
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_sky
+    id: '353'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_person
+      metric_name: iou_class_person
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_person
+    id: '354'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_rider
+      metric_name: iou_class_rider
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_rider
+    id: '355'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_car
+      metric_name: iou_class_car
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_car
+    id: '356'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_truck
+      metric_name: iou_class_truck
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_truck
+    id: '357'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_bus
+      metric_name: iou_class_bus
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_bus
+    id: '358'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_train
+      metric_name: iou_class_train
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_train
+    id: '359'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_motorcycle
+      metric_name: iou_class_motorcycle
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_motorcycle
+    id: '360'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class_bicycle
+      metric_name: iou_class_bicycle
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class_bicycle
+    id: '361'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: Input
+    data:
+      type: Input
+      output_name: non_normalized
+      selected: non_normalized
+    id: '364'
+    inputs: {}
+    outputs:
+      non_normalized:
+        - inputKey: image
+          operation: Visualizer
+          id: '337'
+        - inputKey: image
+          operation: Visualizer
+          id: '336'
+  - operation: Input
+    data:
+      type: Input
+      output_name: non_normalized
+      selected: non_normalized
+    id: '365'
+    inputs: {}
+    outputs:
+      non_normalized:
+        - inputKey: input
+          operation: Permute
+          name: permute_127
+          id: '51'
+        - inputKey: data
+          operation: Visualizer
+          id: '330'
+layers:
+  - operation: Permute
+    data:
+      prediction_type: seg_mask
+    name: permute_128
+    id: '1'
