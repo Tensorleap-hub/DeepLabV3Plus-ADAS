@@ -68,20 +68,6 @@ Before you begin, ensure that you have the following prerequisites installed:
 <br>
 
 
-with `curl`:
-
-```
-curl -s <https://raw.githubusercontent.com/tensorleap/cli-go/master/install.sh> | bash
-```
-
-with `wget`:
-
-```
-wget -q -O - <https://raw.githubusercontent.com/tensorleap/cli-go/master/install.sh> | bash
-```
-
-CLI repository: https://github.com/tensorleap/cli-go
-
 ## Tensorleap CLI Usage
 
 ### Tensorleap **Login**
@@ -89,31 +75,20 @@ CLI repository: https://github.com/tensorleap/cli-go
 To login to Tensorealp:
 
 ```
-tensorleap auth login [api key] [api url].
+leap auth login [api key] [api url].
 
 ```
 
 - API Key is your Tensorleap token (see how to generate a CLI token in the section below).
 - API URL is your Tensorleap environment URL: CLIENT_NAME.tensorleap.ai
 
-<br>
-
-**How To Generate CLI Token from the UI**
-
-1. Login to the platform in 'CLIENT_NAME.tensorleap.ai'
-2. Scroll down to the bottom of the **Resources Management** page, then click `GENERATE CLI TOKEN` in the bottom-left corner.
-3. Once a CLI token is generated, just copy the whole text and paste it into your shell:
-
-```
-tensorleap auth login [api key] [api url]
-```
 
 ## Tensorleap **Dataset Deployment**
 
 To deploy your local changes:
 
 ```
-leap code push
+leap project push models/DeeplabV3.h5
 ```
 
 ### **Tensorleap files**
