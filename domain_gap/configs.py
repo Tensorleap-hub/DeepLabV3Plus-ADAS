@@ -1,8 +1,8 @@
 import numpy as np
 
 # --------------- GCS --------------------
-BUCKET_NAME = 'datasets-reteai'
-PROJECT_ID = 'splendid-flow-231921'
+BUCKET_NAME = 'tl-private-datasets'
+PROJECT_ID = 'tl-private-dev-project'
 
 # --------------- Data --------------------
 NORM_CS = False
