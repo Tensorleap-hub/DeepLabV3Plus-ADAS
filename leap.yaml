@@ -1,26 +1,17 @@
-codeIntegrationId: 64b507af68742900189275a4
+codeIntegrationId: 656496263921f60012723669
 projectId: ""
-secretManagerId: ""
+secretId: ""
 entryFile: leap_binder.py
 include:
     - leap_binder.py
-    - domain_gap/configs.py
-    - domain_gap/data/preprocess.py
+    - leap_mapping.yaml
     - domain_gap/data/cs_data.py
     - domain_gap/data/kitti_data.py
+    - domain_gap/tl_helpers/preprocess.py
+    - domain_gap/tl_helpers/utils.py
+    - domain_gap/tl_helpers/visualizers/visualizers.py
+    - domain_gap/tl_helpers/visualizers/visualizers_utils.py
+    - domain_gap/utils/configs.py
     - domain_gap/utils/gcs_utils.py
-    - domain_gap/utils/utils.py
-    - domain_gap/visualizers/visualizers.py
-    - domain_gap/visualizers/visualizers_utils.py
-
-
-
-
-
-
-
-
-
-
 
 
