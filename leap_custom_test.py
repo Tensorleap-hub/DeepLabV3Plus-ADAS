@@ -4,7 +4,7 @@ from leap_binder import *
 
 def check_custom_integration():
     print("statedtesting")
-    model_path = 'model/DeeplabV3.h5'
+    model_path = 'models/DeeplabV3.h5'
     if not exists(model_path):
         print("Downloading DeeplabV3.h5 for inference")
         urllib.request.urlretrieve(
@@ -26,11 +26,18 @@ def check_custom_integration():
     # custom metrics
     metric_result = mean_iou(y_pred, mask_gt)
 
-    index = metadata_idx(idx, train_res)
     class_percent = metadata_class_percent(idx, train_res)
-    brightness = metadata_brightness(idx, train_res)
-    filename_city_dataset = metadata_filename_city_dataset(idx, train_res)
-    json_data = metadata_json_data(idx, train_res)
+    filename = metadata_filename(idx, train_res)
+    city = metadata_city(idx, train_res)
+    dataset = metadata_dataset(idx, train_res)
+    idx = metadata_idx(idx, train_res)
+    gps_heading = metadata_gps_heading(idx, train_res)
+    gps_latitude = metadata_gps_latitude(idx, train_res)
+    gps_longtitude = metadata_gps_longtitude(idx, train_res)
+    outside_temperature = metadata_outside_temperature(idx, train_res)
+    speed = metadata_speed(idx, train_res)
+    yaw_rate = metadata_yaw_rate(idx, train_res)
+
 
 if __name__ == "__main__":
     check_custom_integration()

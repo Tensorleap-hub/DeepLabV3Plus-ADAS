@@ -6,7 +6,7 @@ import numpy as np
 from code_loader.contract.datasetclasses import PreprocessResponse
 
 from domain_gap.utils.gcs_utils import _connect_to_gcs_and_return_bucket
-from domain_gap.configs import BUCKET_NAME, TRAIN_PERCENT, SEED, NUM_CLASSES
+from domain_gap.utils.configs import BUCKET_NAME, TRAIN_PERCENT, SEED, NUM_CLASSES
 
 
 class Cityscapes:
@@ -135,7 +135,7 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
         "file_names": all_file_names[0],
         "cities": all_cities[0],
         "metadata": all_metadata[0],
-        "dataset": ["cityscapes_od"] * len(all_images[0])}),
+        "dataset": ["cityscapes"] * len(all_images[0])}),
                  PreprocessResponse(length=len(all_images[1]), data={
                      "image_path": all_images[1],
                      "subset_name": "val",
@@ -145,5 +145,5 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
                      "file_names": all_file_names[1],
                      "cities": all_cities[1],
                      "metadata": all_metadata[1],
-                     "dataset": ["cityscapes_od"] * len(all_images[1])})]
+                     "dataset": ["cityscapes"] * len(all_images[1])})]
     return responses
