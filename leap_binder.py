@@ -127,10 +127,10 @@ def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
 
 leap_binder.set_preprocess(subset_images)
 
-if NORM_CS:
-    leap_binder.set_input(input_image, 'normalized_image')
-else:
-    leap_binder.set_input(non_normalized_input_image, 'non_normalized')
+
+leap_binder.set_input(input_image, 'normalized_image')
+
+leap_binder.set_input(non_normalized_input_image, 'non_normalized')
 
 leap_binder.set_ground_truth(ground_truth_mask, 'mask')
 
