@@ -1,13 +1,12 @@
 from typing import List, Dict
 from pathlib import Path
-
-from domain_gap.utils.configs import VAL_INDICES
+from domain_gap.utils.config import CONFIG
 
 
 def get_kitti_data() -> Dict[str, List[str]]:
     dataset_path = Path('KITTI/data_semantics/training')
-    train_indices = [i for i in range(200) if i not in VAL_INDICES]
-    indices_lists = [train_indices, VAL_INDICES]
+    train_indices = [i for i in range(200) if i not in CONFIG['VAL_INDICES']]
+    indices_lists = [train_indices, CONFIG['VAL_INDICES']]
     data_dict = {'train': {}, "validation": {}}
     TRAIN_SIZE = 170
     VAL_SIZE = 30

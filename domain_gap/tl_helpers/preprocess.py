@@ -3,11 +3,11 @@ from code_loader.contract.datasetclasses import PreprocessResponse
 
 from domain_gap.data.cs_data import get_cityscapes_data
 from domain_gap.data.kitti_data import get_kitti_data
-from domain_gap.utils.configs import TRAIN_SIZE, VAL_SIZE
+from domain_gap.utils.config import CONFIG
 
 
 def subset_images() -> List[PreprocessResponse]:
-    subset_sizes = [TRAIN_SIZE, VAL_SIZE]
+    subset_sizes = [CONFIG['TRAIN_SIZE'], CONFIG['VAL_SIZE']]
     cs_responses: List[PreprocessResponse] = get_cityscapes_data()
     kitti_data: Dict[str, List[str]] = get_kitti_data()
     sub_names = ["train", "validation"]
