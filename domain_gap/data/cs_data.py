@@ -6,7 +6,7 @@ import numpy as np
 from code_loader.contract.datasetclasses import PreprocessResponse
 
 from domain_gap.utils.gcs_utils import _connect_to_gcs_and_return_bucket
-from domain_gap.utils.configs import BUCKET_NAME, TRAIN_PERCENT, SEED, NUM_CLASSES
+from domain_gap.utils.config import CONFIG
 
 
 class Cityscapes:
@@ -81,12 +81,13 @@ class Cityscapes:
 
 
 SUPERCATEGORY_CLASSES = np.unique([Cityscapes.classes[i].category for i in range(len(Cityscapes.classes)) if
-                                   Cityscapes.classes[i].train_id < NUM_CLASSES])
-CATEGORIES = [Cityscapes.classes[i].name for i in range(len(Cityscapes.classes)) if Cityscapes.classes[i].train_id < NUM_CLASSES]
+                                   Cityscapes.classes[i].train_id < CONFIG['NUM_CLASSES']])
+CATEGORIES = [Cityscapes.classes[i].name for i in range(len(Cityscapes.classes)) if
+              Cityscapes.classes[i].train_id < CONFIG['NUM_CLASSES']]
 
 def get_cityscapes_data() -> List[PreprocessResponse]:
-    np.random.seed(SEED)
-    bucket = _connect_to_gcs_and_return_bucket(BUCKET_NAME)
+    np.random.seed(CONFIG['SEED'])
+    bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
     dataset_path = Path('Cityscapes')
     FOLDERS_NAME = ["zurich", "weimar", "ulm", "tubingen", "stuttgart", "strasbourg", "monchengladbach", "krefeld",
                     "jena",
@@ -112,7 +113,7 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
                      fn in file_names]
         metadata_json = [str(dataset_path / "vehicle_trainvaltest/vehicle/train" / folder_name / fn) + "_vehicle.json"
                          for fn in file_names]
-        train_size = int(len(permuted_list) * TRAIN_PERCENT)
+        train_size = int(len(permuted_list) * CONFIG['TRAIN_PERCENT'])
         all_images[0], all_images[1] = all_images[0] + images[:train_size], all_images[1] + images[train_size:]
         all_gt_images[0], all_gt_images[1] = all_gt_images[0] + gt_images[:train_size], all_gt_images[1] + gt_images[
                                                                                                            train_size:]

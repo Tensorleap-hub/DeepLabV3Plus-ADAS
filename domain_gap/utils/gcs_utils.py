@@ -5,8 +5,7 @@ from functools import lru_cache
 from google.cloud import storage
 from google.cloud.storage import Bucket
 from google.oauth2 import service_account
-
-from domain_gap.utils.configs import BUCKET_NAME
+from domain_gap.utils.config import CONFIG
 
 
 @lru_cache()
@@ -28,12 +27,12 @@ def _download(cloud_file_path: str, local_file_path: Optional[str] = None) -> st
     # if local_file_path is not specified saving in home dir
     if local_file_path is None:
         home_dir = os.getenv("HOME")
-        local_file_path = os.path.join(home_dir, "Tensorleap", BUCKET_NAME, cloud_file_path)
+        local_file_path = os.path.join(home_dir, "Tensorleap", CONFIG['BUCKET_NAME'], cloud_file_path)
 
     # check if file already exists
     if os.path.exists(local_file_path):
         return local_file_path
-    bucket = _connect_to_gcs_and_return_bucket(BUCKET_NAME)
+    bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
     dir_path = os.path.dirname(local_file_path)
     os.makedirs(dir_path, exist_ok=True)
     blob = bucket.blob(cloud_file_path)

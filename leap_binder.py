@@ -14,23 +14,23 @@ from domain_gap.tl_helpers.preprocess import subset_images
 from domain_gap.tl_helpers.visualizers.visualizers import image_visualizer, loss_visualizer, mask_visualizer, \
     cityscape_segmentation_visualizer
 from domain_gap.tl_helpers.utils import get_categorical_mask, get_metadata_json, class_mean_iou, mean_iou
-
-
+from domain_gap.utils.config import CONFIG
+import numpy as np
 # ----------------------------------- Input ------------------------------------------
 
 def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
     cloud_path = data['image_path'][idx % data["real_size"]]
     fpath = _download(str(cloud_path))
-    img = np.array(Image.open(fpath).convert('RGB').resize(IMAGE_SIZE)) / 255.
+    img = np.array(Image.open(fpath).convert('RGB').resize(CONFIG['IMAGE_SIZE'])) / 255.
     return img
 
 
 def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     img = non_normalized_input_image(idx % data.data["real_size"], data)
     if data.data['dataset'][idx % data.data["real_size"]] == 'kitti':
-        img = (img - KITTI_MEAN) * CITYSCAPES_STD / KITTI_STD + CITYSCAPES_MEAN
-    normalized_image = (img - IMAGE_MEAN) / IMAGE_STD
+        img = (img - CONFIG['KITTI_MEAN']) * CONFIG['CITYSCAPES_STD'] / CONFIG['KITTI_STD'] + CONFIG['CITYSCAPES_MEAN']
+    normalized_image = (img - CONFIG['IMAGE_MEAN']) / CONFIG['IMAGE_STD']
     return normalized_image.astype(float)
 
 
@@ -85,42 +85,42 @@ def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsHeading']
     else:
-        return DEFAULT_GPS_HEADING
+        return CONFIG['DEFAULT_GPS_HEADING']
 
 
 def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLatitude']
     else:
-        return DEFAULT_GPS_LATITUDE
+        return CONFIG['DEFAULT_GPS_LATITUDE']
 
 
 def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLongitude']
     else:
-        return DEFAULT_GPS_LONGTITUDE
+        return CONFIG['DEFAULT_GPS_LONGTITUDE']
 
 
 def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['outsideTemperature']
     else:
-        return DEFAULT_TEMP
+        return CONFIG['DEFAULT_TEMP']
 
 
 def metadata_speed(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['speed']
     else:
-        return DEFAULT_SPEED
+        return CONFIG['DEFAULT_SPEED']
 
 
 def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['yawRate']
     else:
-        return DEFAULT_YAW_RATE
+        return CONFIG['DEFAULT_YAW_RATE']
 
 
 # ----------------------------------- Binding ------------------------------------------
