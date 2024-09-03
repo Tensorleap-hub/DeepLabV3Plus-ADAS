@@ -8,9 +8,11 @@ packages = [{include = "domain_gap"}]
 
 [tool.poetry.dependencies]
 python = ">=3.8, <3.11"
-code-loader = "^0.2.83"
-matplotlib = "^3.7.1"
+code-loader = "1.0.48"
+matplotlib = "3.3"
 google-cloud-storage = "^2.10.0"
+tensorflow-io-gcs-filesystem = "0.34.0"
+tensorflow = "2.11.1"
 
 
 [build-system]

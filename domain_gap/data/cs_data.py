@@ -88,7 +88,6 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
     np.random.seed(SEED)
     bucket = _connect_to_gcs_and_return_bucket(BUCKET_NAME)
     dataset_path = Path('Cityscapes')
-    responses = []
     FOLDERS_NAME = ["zurich", "weimar", "ulm", "tubingen", "stuttgart", "strasbourg", "monchengladbach", "krefeld",
                     "jena",
                     "hanover", "hamburg", "erfurt", "dusseldorf", "darmstadt", "cologne", "bremen", "bochum", "aachen"]
