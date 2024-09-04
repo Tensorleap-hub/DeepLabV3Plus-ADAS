@@ -6,7 +6,7 @@ from google.cloud import storage
 from google.cloud.storage import Bucket
 from google.oauth2 import service_account
 from domain_gap.utils.config import CONFIG
-
+from os.path import join
 
 @lru_cache()
 def _connect_to_gcs_and_return_bucket(bucket_name: str) -> Bucket:
@@ -23,11 +23,14 @@ def _connect_to_gcs_and_return_bucket(bucket_name: str) -> Bucket:
     return gcs_client.bucket(bucket_name)
 
 
-def _download(cloud_file_path: str, local_file_path: Optional[str] = None) -> str:
+def _download(cloud_file_path: str, local_file_path: Optional[str] = None, is_local=CONFIG['USE_LOCAL']) -> str:
     # if local_file_path is not specified saving in home dir
     if local_file_path is None:
-        home_dir = os.getenv("HOME")
-        local_file_path = os.path.join(home_dir, "Tensorleap", CONFIG['BUCKET_NAME'], cloud_file_path)
+        if is_local:
+            local_file_path = join(CONFIG['LOCAL_BASE_PATH'], cloud_file_path)
+        else:
+            home_dir = os.getenv("HOME")
+            local_file_path = os.path.join(home_dir, "Tensorleap", CONFIG['BUCKET_NAME'], cloud_file_path)
 
     # check if file already exists
     if os.path.exists(local_file_path):
