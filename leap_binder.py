@@ -8,7 +8,6 @@ from code_loader.contract.enums import (
 )
 
 from domain_gap.data.cs_data import Cityscapes, CATEGORIES
-from domain_gap.utils.configs import *
 from domain_gap.utils.gcs_utils import _download
 from domain_gap.tl_helpers.preprocess import subset_images
 from domain_gap.tl_helpers.visualizers.visualizers import image_visualizer, loss_visualizer, mask_visualizer, \
@@ -16,6 +15,7 @@ from domain_gap.tl_helpers.visualizers.visualizers import image_visualizer, loss
 from domain_gap.tl_helpers.utils import get_categorical_mask, get_metadata_json, class_mean_iou, mean_iou
 from domain_gap.utils.config import CONFIG
 import numpy as np
+import os
 # ----------------------------------- Input ------------------------------------------
 
 def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
@@ -123,6 +123,8 @@ def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
         return CONFIG['DEFAULT_YAW_RATE']
 
 
+def metadata_folder_name(idx: int, data: PreprocessResponse) -> str:
+    return os.path.dirname(data.data['paths'][idx])
 # ----------------------------------- Binding ------------------------------------------
 
 leap_binder.set_preprocess(subset_images)
