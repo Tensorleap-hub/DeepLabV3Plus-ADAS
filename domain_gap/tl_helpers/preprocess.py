@@ -24,9 +24,9 @@ def subset_images() -> List[PreprocessResponse]:
             cs_responses[i].length += len(kitti_data[title]['image_path'])
             cs_responses[i].length = subset_sizes[i]
     else:
-        with open(join(CONFIG['LOCAL_BASE_PATH'], "ADAS_preprocess", "train.json"), 'r') as f:
+        with open(join(CONFIG['LOCAL_BASE_PATH'], "Cityscapes", "ADAS_preprocess", "train.json"), 'r') as f:
             train_data = json.load(f)
-        with open(join(CONFIG['LOCAL_BASE_PATH'], "ADAS_preprocess", "val.json"), 'r') as f:
+        with open(join(CONFIG['LOCAL_BASE_PATH'], "Cityscapes", "ADAS_preprocess", "val.json"), 'r') as f:
             val_data = json.load(f)
         cs_responses = [PreprocessResponse(data=train_data, length=5), PreprocessResponse(data=val_data, length=5)]
     return cs_responses

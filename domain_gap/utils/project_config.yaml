@@ -27,4 +27,4 @@ DEFAULT_TEMP: 19.5
 DEFAULT_SPEED: 10.81
 DEFAULT_YAW_RATE: 0.171
 USE_LOCAL: False
-LOCAL_BASE_PATH: /home/tomtensor/Tensorleap/datasets-reteai/Cityscapes
+LOCAL_BASE_PATH: /home/tomtensor/Tensorleap/datasets-reteai
