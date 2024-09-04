@@ -1,0 +1,28 @@
+#import numpy as np
+
+# --------------- GCS --------------------
+BUCKET_NAME: 'datasets-reteai'
+# --------------- Data --------------------
+SEED: 42
+NUM_CLASSES: 19
+IMAGE_SIZE: [2048, 1024]  # TODO check all occurences and fix
+TRAIN_SIZE: 400
+VAL_SIZE: 20
+TRAIN_PERCENT: 0.8
+
+# --------------- Augmentations --------------------
+IMAGE_MEAN: [0.485, 0.456, 0.406] #turn into numpy
+IMAGE_STD: [0.229, 0.224, 0.225]  #turn into numpy
+KITTI_MEAN:  [0.379, 0.398, 0.384]  #turn into numpy
+KITTI_STD: [0.298, 0.308, 0.315]  #turn into numpy
+CITYSCAPES_MEAN: [0.287, 0.325, 0.284]  #turn into numpy
+CITYSCAPES_STD: [0.176, 0.181, 0.178]   #turn into numpy
+VAL_INDICES: [190, 198, 45, 25, 141, 104, 17, 162, 49, 167, 168, 34, 150, 113, 44,
+               182, 196, 11, 6, 46, 133, 74, 81, 65, 66, 79, 96, 92, 178, 103]
+AUGMENT: True
+DEFAULT_GPS_HEADING: 281.
+DEFAULT_GPS_LATITUDE: 50.780881831805594
+DEFAULT_GPS_LONGTITUDE: 6.108147476339736
+DEFAULT_TEMP: 19.5
+DEFAULT_SPEED: 10.81
+DEFAULT_YAW_RATE: 0.171
