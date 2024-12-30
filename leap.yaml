@@ -1,6 +1,6 @@
-codeIntegrationId: 66aa231ba26c178c9fc974b2
-projectId: ""
-secretId: 6672a0e79cc9e3c8635a3927
+codeIntegrationId: 67715cfcbe53ff146972ddbe
+projectId: 67715cf6be53ff146972ddba
+secretId: 67715e8dbe53ff146972dde4
 entryFile: leap_binder.py
 include:
     - leap_binder.py
@@ -11,5 +11,6 @@ include:
     - domain_gap/tl_helpers/utils.py
     - domain_gap/tl_helpers/visualizers/visualizers.py
     - domain_gap/tl_helpers/visualizers/visualizers_utils.py
-    - domain_gap/utils/configs.py
+    - domain_gap/utils/config.py
     - domain_gap/utils/gcs_utils.py
+    - domain_gap/utils/project_config.yaml
