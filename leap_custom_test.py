@@ -4,6 +4,7 @@ from leap_binder import *
 from pathlib import Path
 
 from code_loader import LeapLoader
+from code_loader.helpers import visualize
 
 
 def check_generic_integration():
@@ -40,18 +41,21 @@ def check_custom_integration():
             # get plot images
             image = input_image(idx, subset)  # get specific image
             if plot:
-                image_visualizer(image).plot_visualizer()
+                image_visualizer_ = image_visualizer(image)
+                visualize(image_visualizer_)
             # get plot gt
             mask_gt = ground_truth_mask(idx, subset)  # get image gt
             if plot:
-                cityscape_segmentation_visualizer(mask_gt).plot_visualizer()
+                cityscape_segmentation_visualizer_ = cityscape_segmentation_visualizer(mask_gt)
+                visualize(cityscape_segmentation_visualizer_)
+
             input_img = np.expand_dims(image, axis=0)
             # predict
             y_pred = model([input_img])[0] # infer and get model prediction
             # compute loss visalize
             loss_visualizer_img = loss_visualizer(image, y_pred, mask_gt)
             if plot:
-                loss_visualizer_img.plot_visualizer()
+                visualize(loss_visualizer_img)
             # custom metrics
             class_iou_res = class_mean_iou(mask_gt, y_pred)
             print(f"Metics: class_mean_iou - {class_iou_res}")
