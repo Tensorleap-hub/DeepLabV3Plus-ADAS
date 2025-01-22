@@ -17,7 +17,7 @@ from domain_gap.utils.config import CONFIG
 import numpy as np
 import os
 from code_loader.inner_leap_binder.leapbinder_decorators import (
-    tensorleap_preprocess, tensorleap_input_encoder, tensorleap_metadata, )
+    tensorleap_preprocess, tensorleap_input_encoder, tensorleap_metadata, tensorleap_gt_encoder, )
 
 # ----------------------------------- Input ------------------------------------------
 
@@ -40,10 +40,10 @@ def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
 
 # ----------------------------------- GT ------------------------------------------
 
+@tensorleap_gt_encoder("mask")
 def ground_truth_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
     mask = get_categorical_mask(idx % data.data["real_size"], data)
-    return tf.keras.utils.to_categorical(mask, num_classes=20).astype(float)[...,
-           :19]  # Remove background class from cross-entropy
+    return tf.keras.utils.to_categorical(mask, num_classes=20).astype(float)[...,:19].astype(np.float32)  # Remove background class from cross-entropy
 
 
 # ----------------------------------- Metadata ------------------------------------------
@@ -74,10 +74,12 @@ def metadata_brightness(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("filename")
 def metadata_filename(idx: int, data: PreprocessResponse) -> str:
+    idx = idx % data.data["real_size"]
     return data.data['file_names'][idx]
 
 @tensorleap_metadata("city")
 def metadata_city(idx: int, data: PreprocessResponse) -> str:
+    idx = idx % data.data["real_size"]
     return data.data['cities'][idx]
 
 @tensorleap_metadata("dataset")
@@ -86,6 +88,7 @@ def metadata_dataset(idx: int, data: PreprocessResponse) -> str:
 
 @tensorleap_metadata("gps_heading")
 def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsHeading']
     else:
@@ -93,6 +96,7 @@ def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("gps_latitude")
 def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLatitude']
     else:
@@ -100,6 +104,7 @@ def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("gps_longtitude")
 def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLongitude']
     else:
@@ -107,6 +112,7 @@ def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("outside_temperature")
 def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['outsideTemperature']
     else:
@@ -114,6 +120,7 @@ def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("speed")
 def metadata_speed(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['speed']
     else:
@@ -121,6 +128,7 @@ def metadata_speed(idx: int, data: PreprocessResponse) -> float:
 
 @tensorleap_metadata("yaw_rate")
 def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['yawRate']
     else:
