@@ -11,8 +11,10 @@ from tensorflow.python.ops import math_ops
 from domain_gap.utils.gcs_utils import _download
 from domain_gap.data.cs_data import Cityscapes, CATEGORIES
 from domain_gap.utils.config import CONFIG
+from code_loader.inner_leap_binder.leapbinder_decorators import (
+    tensorleap_custom_metric )
 
-
+@tensorleap_custom_metric("iou_class")
 def class_mean_iou(y_true, y_pred) -> dict:
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
@@ -51,7 +53,7 @@ def get_class_mean_iou(class_i: int = None):
 
     return class_mean_iou
 
-
+@tensorleap_custom_metric("iou")
 def mean_iou(y_true, y_pred):
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
@@ -74,7 +76,7 @@ def mean_iou(y_true, y_pred):
     # Calculate the IOU value
     iou = tf.where(union > 0, intersection / union, 0)
 
-    return iou
+    return iou.numpy()
 
 def get_categorical_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data

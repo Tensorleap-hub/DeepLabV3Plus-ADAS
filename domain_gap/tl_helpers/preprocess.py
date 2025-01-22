@@ -5,8 +5,9 @@ from domain_gap.data.cs_data import get_cityscapes_data
 from domain_gap.data.kitti_data import get_kitti_data
 from domain_gap.utils.config import CONFIG
 from os.path import join
+from code_loader.inner_leap_binder.leapbinder_decorators import tensorleap_preprocess
 
-
+@tensorleap_preprocess()
 def subset_images() -> List[PreprocessResponse]:
     if not CONFIG['USE_LOCAL']:
         subset_sizes = [CONFIG['TRAIN_SIZE'], CONFIG['VAL_SIZE']]
