@@ -24,9 +24,6 @@ decorators:
     inputs: {}
     outputs:
       mask:
-        - inputKey: ground_truth
-          operation: CategoricalCrossentropy
-          id: '332'
         - inputKey: mask
           operation: Visualizer
           id: '334'
@@ -39,37 +36,9 @@ decorators:
         - inputKey: y_true
           operation: Metric
           id: '366'
-  - operation: CategoricalCrossentropy
-    data:
-      type: Loss
-    id: '332'
-    inputs:
-      prediction:
-        - outputKey: feature_map
-          operation: Permute
-          name: permute_128
-          id: '1'
-      ground_truth:
-        - outputKey: mask
-          operation: GroundTruth
-          id: '331'
-    outputs:
-      loss:
-        - inputKey: '0'
-          operation: Adamax
-          id: '333'
-  - operation: Adamax
-    data:
-      type: Optimizer
-      custom_input_keys:
-        - 333-0
-    id: '333'
-    inputs:
-      '0':
-        - outputKey: loss
+        - inputKey: ground_truth
           operation: CategoricalCrossentropy
-          id: '332'
-    outputs: {}
+          id: '367'
   - operation: Visualizer
     data:
       type: Visualizer
@@ -184,10 +153,10 @@ decorators:
       non_normalized:
         - inputKey: image
           operation: Visualizer
-          id: '337'
+          id: '336'
         - inputKey: image
           operation: Visualizer
-          id: '336'
+          id: '337'
   - operation: Input
     data:
       type: Input
@@ -197,13 +166,13 @@ decorators:
     inputs: {}
     outputs:
       non_normalized:
+        - inputKey: data
+          operation: Visualizer
+          id: '330'
         - inputKey: input
           operation: Permute
           name: permute_127
           id: '51'
-        - inputKey: data
-          operation: Visualizer
-          id: '330'
   - operation: Metric
     data:
       type: Metric
@@ -221,6 +190,21 @@ decorators:
           name: permute_128
           id: '1'
       y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '331'
+    outputs: {}
+  - operation: CategoricalCrossentropy
+    data:
+      type: Loss
+    id: '367'
+    inputs:
+      prediction:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      ground_truth:
         - outputKey: mask
           operation: GroundTruth
           id: '331'
