@@ -16,39 +16,44 @@ from domain_gap.tl_helpers.utils import get_categorical_mask, get_metadata_json,
 from domain_gap.utils.config import CONFIG
 import numpy as np
 import os
+from code_loader.inner_leap_binder.leapbinder_decorators import (
+    tensorleap_preprocess, tensorleap_input_encoder, tensorleap_metadata, tensorleap_gt_encoder, )
+
 # ----------------------------------- Input ------------------------------------------
 
+@tensorleap_input_encoder('non_normalized')
 def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
     cloud_path = data['image_path'][idx % data["real_size"]]
     fpath = _download(str(cloud_path))
     img = np.array(Image.open(fpath).convert('RGB').resize(CONFIG['IMAGE_SIZE'])) / 255.
-    return img
+    return img.astype(np.float32)
 
-
+@tensorleap_input_encoder('normalized_image')
 def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     img = non_normalized_input_image(idx % data.data["real_size"], data)
     if data.data['dataset'][idx % data.data["real_size"]] == 'kitti':
         img = (img - CONFIG['KITTI_MEAN']) * CONFIG['CITYSCAPES_STD'] / CONFIG['KITTI_STD'] + CONFIG['CITYSCAPES_MEAN']
     normalized_image = (img - CONFIG['IMAGE_MEAN']) / CONFIG['IMAGE_STD']
-    return normalized_image.astype(float)
+    return normalized_image.astype(np.float32)
 
 
 # ----------------------------------- GT ------------------------------------------
 
+@tensorleap_gt_encoder("mask")
 def ground_truth_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
     mask = get_categorical_mask(idx % data.data["real_size"], data)
-    return tf.keras.utils.to_categorical(mask, num_classes=20).astype(float)[...,
-           :19]  # Remove background class from cross-entropy
+    return tf.keras.utils.to_categorical(mask, num_classes=20).astype(float)[...,:19].astype(np.float32)  # Remove background class from cross-entropy
 
 
 # ----------------------------------- Metadata ------------------------------------------
 
+@tensorleap_metadata("idx")
 def metadata_idx(idx: int, data: PreprocessResponse) -> int:
     """ add TL index """
     return idx
 
-
+@tensorleap_metadata("class_percent")
 def metadata_class_percent(idx: int, data: PreprocessResponse) -> dict:
     res = {}
     mask = get_categorical_mask(idx % data.data["real_size"], data)
@@ -63,60 +68,67 @@ def metadata_class_percent(idx: int, data: PreprocessResponse) -> dict:
         res[f'{c}'] = percent_obj
     return res
 
-
 def metadata_brightness(idx: int, data: PreprocessResponse) -> float:
     img = non_normalized_input_image(idx % data.data["real_size"], data)
     return np.mean(img)
 
-
+@tensorleap_metadata("filename")
 def metadata_filename(idx: int, data: PreprocessResponse) -> str:
+    idx = idx % data.data["real_size"]
     return data.data['file_names'][idx]
 
-
+@tensorleap_metadata("city")
 def metadata_city(idx: int, data: PreprocessResponse) -> str:
+    idx = idx % data.data["real_size"]
     return data.data['cities'][idx]
 
-
+@tensorleap_metadata("dataset")
 def metadata_dataset(idx: int, data: PreprocessResponse) -> str:
     return data.data['dataset'][idx % data.data["real_size"]]
 
-
+@tensorleap_metadata("gps_heading")
 def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsHeading']
     else:
         return CONFIG['DEFAULT_GPS_HEADING']
 
-
+@tensorleap_metadata("gps_latitude")
 def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLatitude']
     else:
         return CONFIG['DEFAULT_GPS_LATITUDE']
 
-
+@tensorleap_metadata("gps_longtitude")
 def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['gpsLongitude']
     else:
         return CONFIG['DEFAULT_GPS_LONGTITUDE']
 
-
+@tensorleap_metadata("outside_temperature")
 def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['outsideTemperature']
     else:
         return CONFIG['DEFAULT_TEMP']
 
-
+@tensorleap_metadata("speed")
 def metadata_speed(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['speed']
     else:
         return CONFIG['DEFAULT_SPEED']
 
-
+@tensorleap_metadata("yaw_rate")
 def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
+    idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
         return get_metadata_json(idx, data)['yawRate']
     else:
@@ -126,34 +138,5 @@ def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
 def metadata_folder_name(idx: int, data: PreprocessResponse) -> str:
     return os.path.dirname(data.data['paths'][idx])
 # ----------------------------------- Binding ------------------------------------------
-
-leap_binder.set_preprocess(subset_images)
-
-
-leap_binder.set_input(input_image, 'normalized_image')
-
-leap_binder.set_input(non_normalized_input_image, 'non_normalized')
-
-leap_binder.set_ground_truth(ground_truth_mask, 'mask')
-
-leap_binder.add_custom_metric(class_mean_iou, name=f"iou_class")
-leap_binder.add_custom_metric(mean_iou, name=f"iou")
-
-leap_binder.set_metadata(metadata_class_percent, 'class_percent')
-leap_binder.set_metadata(metadata_filename, 'filename')
-leap_binder.set_metadata(metadata_city, 'city')
-leap_binder.set_metadata(metadata_dataset, 'dataset')
-leap_binder.set_metadata(metadata_idx, 'idx')
-leap_binder.set_metadata(metadata_gps_heading, 'gps_heading')
-leap_binder.set_metadata(metadata_gps_latitude, 'gps_latitude')
-leap_binder.set_metadata(metadata_gps_longtitude, 'gps_longtitude')
-leap_binder.set_metadata(metadata_outside_temperature, 'outside_temperature')
-leap_binder.set_metadata(metadata_speed, 'speed')
-leap_binder.set_metadata(metadata_yaw_rate, 'yaw_rate')
-
-leap_binder.set_visualizer(image_visualizer, 'image_visualizer', LeapDataType.Image)
-leap_binder.set_visualizer(mask_visualizer, 'mask_visualizer', LeapDataType.ImageMask)
-leap_binder.set_visualizer(cityscape_segmentation_visualizer, 'cityscapes_visualizer', LeapDataType.Image)
-leap_binder.set_visualizer(loss_visualizer, 'loss_visualizer', LeapDataType.Image)
 
 leap_binder.add_prediction('seg_mask', CATEGORIES)

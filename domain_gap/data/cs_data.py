@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Dict, Union
 from pathlib import Path
 from collections import namedtuple
 import numpy as np
@@ -85,7 +85,7 @@ SUPERCATEGORY_CLASSES = np.unique([Cityscapes.classes[i].category for i in range
 CATEGORIES = [Cityscapes.classes[i].name for i in range(len(Cityscapes.classes)) if
               Cityscapes.classes[i].train_id < CONFIG['NUM_CLASSES']]
 
-def get_cityscapes_data() -> List[PreprocessResponse]:
+def get_cityscapes_data() -> List[Dict[str, Union[str, float, int]]]:
     np.random.seed(CONFIG['SEED'])
     bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
     dataset_path = Path('Cityscapes')
@@ -126,7 +126,7 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
         all_metadata[0], all_metadata[1] = all_metadata[0] + metadata_json[:train_size], all_metadata[
             1] + metadata_json[train_size:]
 
-    responses = [PreprocessResponse(length=len(all_images[0]), data={
+    dicts = [{
         "image_path": all_images[0],
         "subset_name": "train",
         "gt_path": all_gt_labels[0],
@@ -135,8 +135,8 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
         "file_names": all_file_names[0],
         "cities": all_cities[0],
         "metadata": all_metadata[0],
-        "dataset": ["cityscapes"] * len(all_images[0])}),
-                 PreprocessResponse(length=len(all_images[1]), data={
+        "dataset": ["cityscapes"] * len(all_images[0])},
+                 {
                      "image_path": all_images[1],
                      "subset_name": "val",
                      "gt_path": all_gt_labels[1],
@@ -145,5 +145,5 @@ def get_cityscapes_data() -> List[PreprocessResponse]:
                      "file_names": all_file_names[1],
                      "cities": all_cities[1],
                      "metadata": all_metadata[1],
-                     "dataset": ["cityscapes"] * len(all_images[1])})]
-    return responses
+                     "dataset": ["cityscapes"] * len(all_images[1])}]
+    return dicts
