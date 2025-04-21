@@ -13,7 +13,7 @@ from code_loader.helpers import visualize
 def check_custom_integration():
     print("stated testing")
     plot = False
-    check_generic = False
+    check_generic = True
     if check_generic:
         leap_binder.check()
     # loading model
@@ -57,10 +57,10 @@ def check_custom_integration():
                 visualize(loss_visualizer_img, "Loss Vis")
 
             # custom metrics
-            class_iou_res = class_mean_iou(mask_gt, y_pred.numpy())
-            print(f"Metics: class_mean_iou - {class_iou_res}")
-            metric_result = mean_iou(y_pred.numpy(), mask_gt)
+            metric_result = mean_iou(mask_gt_batch, pred_batch)
             print(f"Metics: mean_iou - {metric_result}")
+            class_iou_res = class_mean_iou(mask_gt_batch, pred_batch)
+            print(f"Metics: class_mean_iou - {class_iou_res}")
             # print metadata
             for metadata_handler in leap_binder.setup_container.metadata:
                 curr_metadata = metadata_handler.function(idx, subset)
