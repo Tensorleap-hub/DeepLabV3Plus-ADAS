@@ -32,6 +32,7 @@ def check_custom_integration():
             idx = j
             # get plot images
             image = input_image(idx, subset)  # get specific image
+            non_normalized_image = non_normalized_input_image(idx, subset)
 
             # get gt
             mask_gt = ground_truth_mask(idx, subset)  # get image gt
