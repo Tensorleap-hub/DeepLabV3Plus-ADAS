@@ -14,3 +14,4 @@ include:
     - domain_gap/utils/config.py
     - domain_gap/utils/gcs_utils.py
     - domain_gap/utils/project_config.yaml
+pythonVersion: py38

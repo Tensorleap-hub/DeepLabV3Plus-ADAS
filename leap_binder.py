@@ -17,7 +17,8 @@ from domain_gap.utils.config import CONFIG
 import numpy as np
 import os
 from code_loader.inner_leap_binder.leapbinder_decorators import (
-    tensorleap_preprocess, tensorleap_input_encoder, tensorleap_metadata, tensorleap_gt_encoder, )
+    tensorleap_preprocess, tensorleap_input_encoder, tensorleap_metadata, tensorleap_gt_encoder,
+    tensorleap_custom_loss, )
 
 # ----------------------------------- Input ------------------------------------------
 
@@ -137,6 +138,14 @@ def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
 
 def metadata_folder_name(idx: int, data: PreprocessResponse) -> str:
     return os.path.dirname(data.data['paths'][idx])
+
+@tensorleap_custom_loss("categorical_cross_entropy")
+def custom_loss(ground_truth: np.array, prediction: np.array) -> np.array:
+    ls = tf.keras.losses.CategoricalCrossentropy(from_logits=True, reduction='none')
+    ls_batch = ls(ground_truth, prediction)
+    ls_image = tf.reduce_mean(ls_batch, axis=[1, 2])
+    return ls_image.numpy()
+
 # ----------------------------------- Binding ------------------------------------------
 
 leap_binder.add_prediction('seg_mask', CATEGORIES)
