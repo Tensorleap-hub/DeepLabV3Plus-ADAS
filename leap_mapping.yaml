@@ -1,4 +1,25 @@
 decorators:
+  - operation: Input
+    data:
+      type: Input
+      output_name: normalized_image
+    id: '52'
+    inputs: {}
+    outputs:
+      normalized_image:
+        - inputKey: input
+          operation: Permute
+          name: permute_127
+          id: '51'
+        - inputKey: data
+          operation: Visualizer
+          id: '365'
+        - inputKey: image
+          operation: Visualizer
+          id: '366'
+        - inputKey: image
+          operation: Visualizer
+          id: '367'
   - operation: Visualizer
     data:
       type: Visualizer
@@ -8,52 +29,34 @@ decorators:
       arg_names:
         - data
       user_unique_name: Image
-    id: '330'
+    id: '365'
     inputs:
       data:
-        - outputKey: non_normalized
+        - outputKey: normalized_image
           operation: Input
-          id: '365'
+          id: '52'
     outputs: {}
-  - operation: GroundTruth
-    data:
-      type: GroundTruth
-      output_name: mask
-      selected: mask
-    id: '331'
-    inputs: {}
-    outputs:
-      mask:
-        - inputKey: mask
-          operation: Visualizer
-          id: '334'
-        - inputKey: y_true
-          operation: Metric
-          id: '341'
-        - inputKey: gt
-          operation: Visualizer
-          id: '336'
-        - inputKey: y_true
-          operation: Metric
-          id: '366'
-        - inputKey: ground_truth
-          operation: CategoricalCrossentropy
-          id: '367'
   - operation: Visualizer
     data:
       type: Visualizer
-      name: cityscapes_visualizer
-      visualizer_name: cityscapes_visualizer
-      visualizer_type: Image
+      name: mask_visualizer
+      visualizer_name: mask_visualizer
+      visualizer_type: ImageMask
       arg_names:
+        - image
         - mask
-      user_unique_name: cityscapes_visualizer_gt
-    id: '334'
+      user_unique_name: Pred_mask_visualizer
+    id: '366'
     inputs:
       mask:
-        - outputKey: mask
-          operation: GroundTruth
-          id: '331'
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      image:
+        - outputKey: normalized_image
+          operation: Input
+          id: '52'
     outputs: {}
   - operation: Visualizer
     data:
@@ -66,7 +69,7 @@ decorators:
         - prediction
         - gt
       user_unique_name: loss_visualizer
-    id: '336'
+    id: '367'
     inputs:
       prediction:
         - outputKey: feature_map
@@ -74,13 +77,79 @@ decorators:
           name: permute_128
           id: '1'
       image:
-        - outputKey: non_normalized
+        - outputKey: normalized_image
           operation: Input
-          id: '364'
+          id: '52'
       gt:
         - outputKey: mask
           operation: GroundTruth
-          id: '331'
+          id: '368'
+    outputs: {}
+  - operation: GroundTruth
+    data:
+      type: GroundTruth
+      output_name: mask
+      selected: mask
+    id: '368'
+    inputs: {}
+    outputs:
+      mask:
+        - inputKey: gt
+          operation: Visualizer
+          id: '367'
+        - inputKey: y_true
+          operation: Metric
+          id: '372'
+        - inputKey: y_true
+          operation: Metric
+          id: '371'
+        - inputKey: mask
+          operation: Visualizer
+          id: '375'
+        - inputKey: ground_truth
+          operation: CustomLoss
+          id: '379'
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou
+      metric_name: iou
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou
+    id: '371'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '368'
+    outputs: {}
+  - operation: Metric
+    data:
+      type: Metric
+      name: iou_class
+      metric_name: iou_class
+      arg_names:
+        - y_true
+        - y_pred
+      user_unique_name: iou_class
+    id: '372'
+    inputs:
+      y_pred:
+        - outputKey: feature_map
+          operation: Permute
+          name: permute_128
+          id: '1'
+      y_true:
+        - outputKey: mask
+          operation: GroundTruth
+          id: '368'
     outputs: {}
   - operation: Visualizer
     data:
@@ -91,113 +160,40 @@ decorators:
       arg_names:
         - image
         - mask
-      user_unique_name: mask_visualizer
-    id: '337'
+      user_unique_name: GT_mask_visualizer
+    id: '375'
     inputs:
       mask:
-        - outputKey: feature_map
-          operation: Permute
-          name: permute_128
-          id: '1'
+        - outputKey: mask
+          operation: GroundTruth
+          id: '368'
       image:
-        - outputKey: non_normalized
+        - outputKey: normalized_image
           operation: Input
-          id: '364'
-    outputs: {}
-  - operation: Visualizer
-    data:
-      type: Visualizer
-      name: cityscapes_visualizer
-      visualizer_name: cityscapes_visualizer
-      visualizer_type: Image
-      arg_names:
-        - mask
-      user_unique_name: cityscapes_visualizer
-    id: '340'
-    inputs:
-      mask:
-        - outputKey: feature_map
-          operation: Permute
-          name: permute_128
-          id: '1'
-    outputs: {}
-  - operation: Metric
-    data:
-      type: Metric
-      name: iou
-      metric_name: iou
-      arg_names:
-        - y_true
-        - y_pred
-      user_unique_name: iou
-    id: '341'
-    inputs:
-      y_pred:
-        - outputKey: feature_map
-          operation: Permute
-          name: permute_128
-          id: '1'
-      y_true:
-        - outputKey: mask
-          operation: GroundTruth
-          id: '331'
+          id: '376'
     outputs: {}
   - operation: Input
     data:
       type: Input
-      output_name: non_normalized
-      selected: non_normalized
-    id: '364'
+      output_name: normalized_image
+      selected: normalized_image
+    id: '376'
     inputs: {}
     outputs:
-      non_normalized:
+      normalized_image:
         - inputKey: image
           operation: Visualizer
-          id: '336'
-        - inputKey: image
-          operation: Visualizer
-          id: '337'
-  - operation: Input
+          id: '375'
+  - operation: CustomLoss
     data:
-      type: Input
-      output_name: non_normalized
-      selected: non_normalized
-    id: '365'
-    inputs: {}
-    outputs:
-      non_normalized:
-        - inputKey: data
-          operation: Visualizer
-          id: '330'
-        - inputKey: input
-          operation: Permute
-          name: permute_127
-          id: '51'
-  - operation: Metric
-    data:
-      type: Metric
-      name: iou_class
-      metric_name: iou_class
+      type: CustomLoss
+      name: categorical_cross_entropy
+      selected: categorical_cross_entropy
+      user_unique_name: categorical_cross_entropy
       arg_names:
-        - y_true
-        - y_pred
-      user_unique_name: iou_class
-    id: '366'
-    inputs:
-      y_pred:
-        - outputKey: feature_map
-          operation: Permute
-          name: permute_128
-          id: '1'
-      y_true:
-        - outputKey: mask
-          operation: GroundTruth
-          id: '331'
-    outputs: {}
-  - operation: CategoricalCrossentropy
-    data:
-      type: Loss
-    id: '367'
+        - ground_truth
+        - prediction
+    id: '379'
     inputs:
       prediction:
         - outputKey: feature_map
@@ -207,7 +203,7 @@ decorators:
       ground_truth:
         - outputKey: mask
           operation: GroundTruth
-          id: '331'
+          id: '368'
     outputs: {}
 layers:
   - operation: Permute
