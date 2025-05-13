@@ -1,5 +1,8 @@
 import urllib
 from os.path import exists
+
+import numpy as np
+
 from leap_binder import *
 from pathlib import Path
 
@@ -9,7 +12,7 @@ from code_loader.helpers import visualize
 
 def check_custom_integration():
     print("stated testing")
-    plot = True
+    plot = False
     check_generic = True
     if check_generic:
         leap_binder.check()
@@ -29,33 +32,40 @@ def check_custom_integration():
             idx = j
             # get plot images
             image = input_image(idx, subset)  # get specific image
-            if plot:
-                image_visualizer_ = image_visualizer(image)
-                visualize(image_visualizer_)
-            # get plot gt
-            mask_gt = ground_truth_mask(idx, subset)  # get image gt
-            if plot:
-                cityscape_segmentation_visualizer_ = cityscape_segmentation_visualizer(mask_gt)
-                visualize(cityscape_segmentation_visualizer_)
+            non_normalized_image = non_normalized_input_image(idx, subset)
 
-            input_img = np.expand_dims(image, axis=0)
+            # get gt
+            mask_gt = ground_truth_mask(idx, subset)  # get image gt
+
             # predict
-            y_pred = model([input_img])[0] # infer and get model prediction
-            # compute loss visalize
-            loss_visualizer_img = loss_visualizer(image, y_pred.numpy(), mask_gt)
+            input_img = np.expand_dims(image, axis=0)
+            y_pred = model([input_img])[0]  # infer and get model prediction
+
+            # vis
+            mask_gt_batch = np.expand_dims(mask_gt, 0)
+            pred_batch = np.expand_dims(y_pred.numpy(), 0)
+            image_visualizer_ = image_visualizer(input_img)
+            cityscape_segmentation_visualizer_ = cityscape_segmentation_visualizer(mask_gt_batch)
+            mask_gt_vis = mask_visualizer(input_img, mask_gt_batch)
+            mask_pred_vis = mask_visualizer(input_img, pred_batch)
+            loss_visualizer_img = loss_visualizer(input_img, pred_batch, mask_gt_batch)
+
             if plot:
-                visualize(loss_visualizer_img)
+                visualize(image_visualizer_, "Input Image")
+                visualize(cityscape_segmentation_visualizer_)
+                visualize(mask_gt_vis, "GT Mask")
+                visualize(mask_pred_vis, "Predicted Mask")
+                visualize(loss_visualizer_img, "Loss Vis")
+
             # custom metrics
-            class_iou_res = class_mean_iou(mask_gt, y_pred.numpy())
-            print(f"Metics: class_mean_iou - {class_iou_res}")
-            metric_result = mean_iou(y_pred.numpy(), mask_gt)
+            metric_result = mean_iou(mask_gt_batch, pred_batch)
             print(f"Metics: mean_iou - {metric_result}")
+            class_iou_res = class_mean_iou(mask_gt_batch, pred_batch)
+            print(f"Metics: class_mean_iou - {class_iou_res}")
             # print metadata
             for metadata_handler in leap_binder.setup_container.metadata:
                 curr_metadata = metadata_handler.function(idx, subset)
                 print(f"Metadata {metadata_handler.name}: {curr_metadata}")
-
-
 
 
 if __name__ == "__main__":

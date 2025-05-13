@@ -12,10 +12,13 @@ from domain_gap.data.cs_data import CATEGORIES
 
 @tensorleap_custom_visualizer("image_visualizer", LeapDataType.Image)
 def image_visualizer(image: npt.NDArray[np.float32]) -> LeapImage:
+    image = np.squeeze(image)
     return LeapImage((unnormalize_image(image) * 255).astype(np.uint8))
 
 @tensorleap_custom_visualizer("mask_visualizer", LeapDataType.ImageMask)
 def mask_visualizer(image: npt.NDArray[np.float32], mask: npt.NDArray[np.uint8]) -> LeapImageMask:
+    image = np.squeeze(image)
+    mask = np.squeeze(mask)
     excluded_mask = mask.sum(-1) == 0
     if len(mask.shape) > 2:
         if mask.shape[-1] == 1:
@@ -27,6 +30,7 @@ def mask_visualizer(image: npt.NDArray[np.float32], mask: npt.NDArray[np.uint8])
 
 @tensorleap_custom_visualizer("cityscapes_visualizer", LeapDataType.Image)
 def cityscape_segmentation_visualizer(mask: npt.NDArray[np.uint8]) -> LeapImage:
+    mask = np.squeeze(mask)
     if len(mask.shape) > 2:
         if mask.shape[-1] == 1:
             cat_mask = np.squeeze(mask, axis=-1)
@@ -40,6 +44,9 @@ def cityscape_segmentation_visualizer(mask: npt.NDArray[np.uint8]) -> LeapImage:
 
 @tensorleap_custom_visualizer("loss_visualizer", LeapDataType.Image)
 def loss_visualizer(image: npt.NDArray[np.float32], prediction: npt.NDArray[np.float32], gt: npt.NDArray[np.float32]) -> LeapImage:
+    image = np.squeeze(image)
+    prediction = np.squeeze(prediction)
+    gt = np.squeeze(gt)
     image = unnormalize_image(image)
     ls = tf.keras.losses.CategoricalCrossentropy(from_logits=True, reduction='none')
     ls_image = ls(gt, prediction).numpy()

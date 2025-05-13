@@ -15,16 +15,16 @@ from code_loader.inner_leap_binder.leapbinder_decorators import (
     tensorleap_custom_metric )
 
 @tensorleap_custom_metric("iou_class")
-def class_mean_iou(y_true, y_pred) -> dict:
+def class_mean_iou(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
 
     Args:
-        y_true (tf.Tensor): Ground truth segmentation mask tensor.
-        y_pred (tf.Tensor): Predicted segmentation mask tensor.
+        y_true (np.ndarray):Ground truth segmentation mask array of shape (batch_size, height, width, num_classes).
+        y_pred (np.ndarray): Predicted segmentation mask array of shape (batch_size, height, width, num_classes).
 
     Returns:
-        tf.Tensor: Mean Intersection over Union (mIOU) value.
+        res: Dictionary with the mean IOU for each class, calculated per batch.
     """
     res = {}
     for i, c in enumerate(CATEGORIES):
@@ -54,16 +54,16 @@ def get_class_mean_iou(class_i: int = None):
     return class_mean_iou
 
 @tensorleap_custom_metric("iou")
-def mean_iou(y_true, y_pred):
+def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
 
     Args:
-        y_true (tf.Tensor): Ground truth segmentation mask tensor.
-        y_pred (tf.Tensor): Predicted segmentation mask tensor.
+        y_true (np.ndarray): Ground truth segmentation mask tensor.
+        y_pred (np.ndarray): Predicted segmentation mask tensor.
 
     Returns:
-        tf.Tensor: Mean Intersection over Union (mIOU) value.
+        np.ndarray: Mean Intersection over Union (mIOU) value.
     """
     # Flatten the tensors
     y_true_flat = tf.reshape(y_true, [y_true.shape[0], -1])
