@@ -149,3 +149,6 @@ def custom_loss(ground_truth: np.array, prediction: np.array) -> np.array:
 # ----------------------------------- Binding ------------------------------------------
 
 leap_binder.add_prediction('seg_mask', CATEGORIES)
+
+if __name__ == "__main__":
+    leap_binder.check()

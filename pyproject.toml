@@ -10,16 +10,19 @@ packages = [{include = "domain_gap"}]
 python = ">=3.8, <3.11"
 google-cloud-storage = "^2.10.0"
 tensorflow-io-gcs-filesystem = "0.34.0"
-tensorflow = {version = "2.12.0", markers = "sys_platform != 'darwin'"}
-tensorflow-macos = {version = "2.12.0", markers = "sys_platform == 'darwin'"}
 code-loader-helpers = "^1.0.17"
 code-loader = "^1.0.71"
 
+# macOS-specific TensorFlow packages
+tensorflow-macos = { version = "2.12.0", markers = "sys_platform == 'darwin'" }
+
+# Linux TensorFlow package
+tensorflow = { version = "2.12.0", markers = "sys_platform == 'linux'" }
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-test = "leap_test: check_integration"
-custom_test = "leap_custom_test: check_custom_integration"
+test = "leap_test:check_integration"
+custom_test = "leap_custom_test:check_custom_integration"

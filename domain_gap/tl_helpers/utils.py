@@ -4,9 +4,9 @@ import numpy as np
 from code_loader.contract.datasetclasses import PreprocessResponse
 from PIL import Image
 import tensorflow as tf
-from tensorflow.python.ops import array_ops
-from tensorflow.python.ops import confusion_matrix
-from tensorflow.python.ops import math_ops
+# from tensorflow.python.ops import array_ops
+# from tensorflow.python.ops import confusion_matrix
+# from tensorflow.python.ops import math_ops
 
 from domain_gap.utils.gcs_utils import _download
 from domain_gap.data.cs_data import Cityscapes, CATEGORIES

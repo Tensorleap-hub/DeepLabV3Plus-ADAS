@@ -1,6 +1,6 @@
-codeIntegrationId: 6772d2f798bc7af1a538baf4
-projectId: 6772d2f398bc7af1a538baf0
-secretId: 6772d49898bc7af1a538baf6
+codeIntegrationId: 687376d782435f023ae060e6
+projectId: 6808bf31eb0c2cc11606b927
+secretId: 6808ca3fed79daa354101fc2
 entryFile: leap_binder.py
 include:
     - leap_binder.py
@@ -14,4 +14,5 @@ include:
     - domain_gap/utils/config.py
     - domain_gap/utils/gcs_utils.py
     - domain_gap/utils/project_config.yaml
+    - requirements.txt
 pythonVersion: py38

@@ -11,17 +11,17 @@ from os.path import join
 @lru_cache()
 def _connect_to_gcs_and_return_bucket(bucket_name: str) -> Bucket:
     auth_secret_string = os.environ['AUTH_SECRET']
-    auth_secret = json.loads(auth_secret_string)
-    if type(auth_secret) is dict:
-        # getting credentials from dictionary account info
-        credentials = service_account.Credentials.from_service_account_info(auth_secret)
+
+    # Check if the env var is a path to a file
+    if os.path.isfile(auth_secret_string):
+        credentials = service_account.Credentials.from_service_account_file(auth_secret_string)
     else:
-        # getting credentials from path
-        credentials = service_account.Credentials.from_service_account_file(auth_secret)
+        auth_secret = json.loads(auth_secret_string)
+        credentials = service_account.Credentials.from_service_account_info(auth_secret)
+
     project = credentials.project_id
     gcs_client = storage.Client(project=project, credentials=credentials)
     return gcs_client.bucket(bucket_name)
-
 
 def _download(cloud_file_path: str, local_file_path: Optional[str] = None, is_local=CONFIG['USE_LOCAL']) -> str:
     # if local_file_path is not specified saving in home dir
