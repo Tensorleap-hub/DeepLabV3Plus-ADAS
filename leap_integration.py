@@ -66,4 +66,6 @@ def check_custom_integration(idx, subset):
 
 if __name__ == "__main__":
     responses = subset_images()  # get dataset splits
-    check_custom_integration(0, responses[0])
+    for subset in responses:
+        for i in range(5):
+            check_custom_integration(i, subset)

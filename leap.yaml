@@ -1,18 +1,8 @@
-codeIntegrationId: 687376d782435f023ae060e6
-projectId: 6808bf31eb0c2cc11606b927
-secretId: 6808ca3fed79daa354101fc2
+codeIntegrationId: 68cfa29c149a19afa0a2d709
+projectId: 68cfa298149a19afa0a2d703
+secretId: 68cfa287149a19afa0a2d701
 entryFile: leap_binder.py
-include:
-    - leap_binder.py
-    - leap_mapping.yaml
-    - domain_gap/data/cs_data.py
-    - domain_gap/data/kitti_data.py
-    - domain_gap/tl_helpers/preprocess.py
-    - domain_gap/tl_helpers/utils.py
-    - domain_gap/tl_helpers/visualizers/visualizers.py
-    - domain_gap/tl_helpers/visualizers/visualizers_utils.py
-    - domain_gap/utils/config.py
-    - domain_gap/utils/gcs_utils.py
-    - domain_gap/utils/project_config.yaml
-    - requirements.txt
+ignore:
+    *.h5
+    *.png
 pythonVersion: py38
