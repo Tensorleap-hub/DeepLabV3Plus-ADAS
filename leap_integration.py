@@ -37,7 +37,7 @@ def check_custom_integration(idx, subset):
     mask_gt = ground_truth_mask(idx, subset)  # get image gt
 
     # predict
-    y_pred = model([image])[0]  # infer and get model prediction
+    y_pred = model([image])  # infer and get model prediction
 
     # vis
     image_visualizer_ = image_visualizer(image)
@@ -45,7 +45,7 @@ def check_custom_integration(idx, subset):
     mask_gt_vis = mask_visualizer(image, mask_gt)
     mask_pred_vis = mask_visualizer(image, y_pred)
     loss_visualizer_img = loss_visualizer(image, y_pred, mask_gt)
-
+    ls = custom_loss(mask_gt, y_pred)
     if plot:
         visualize(image_visualizer_, "Input Image")
         visualize(cityscape_segmentation_visualizer_)
