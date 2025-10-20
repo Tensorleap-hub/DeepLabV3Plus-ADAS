@@ -9,7 +9,7 @@ from pathlib import Path
 from code_loader import LeapLoader
 from code_loader.plot_functions.visualize import visualize
 from code_loader.contract.datasetclasses import PredictionTypeHandler
-from code_loader.inner_leap_binder.leapbinder_decorators import tensorleap_load_model, integration_test
+from code_loader.inner_leap_binder.leapbinder_decorators import tensorleap_load_model, tensorleap_integration_test
 
 
 prediction_type1 = PredictionTypeHandler('seg_mask', CATEGORIES)
@@ -26,7 +26,7 @@ def load_model():
     cnn = tf.keras.models.load_model(os.path.join(dir_path, model_path))
     return cnn
 
-@integration_test()
+@tensorleap_integration_test()
 def check_custom_integration(idx, subset):
     print("stated testing")
     plot = True
