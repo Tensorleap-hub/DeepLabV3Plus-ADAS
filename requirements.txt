@@ -3,4 +3,3 @@ google-cloud-storage>=2.10.0
 tensorflow-io-gcs-filesystem==0.34.0
 Pillow
 matplotlib
-code-loader==1.0.143.dev4
