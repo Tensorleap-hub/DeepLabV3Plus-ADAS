@@ -74,7 +74,7 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
     union = tf.reduce_sum(tf.maximum(y_true_flat, y_pred_flat), -1)
 
     # Calculate the IOU value
-    iou = tf.where(union > 0, intersection / union, 0)
+    iou = tf.where(union > 0, intersection / union, np.nan)
 
     return iou.numpy()
 
