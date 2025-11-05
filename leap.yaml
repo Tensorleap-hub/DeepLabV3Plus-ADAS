@@ -1,6 +1,6 @@
-codeIntegrationId: 6907028afcfae1a75a5fd20e
-projectId: 6907064dfcfae1a75a5fd2a6
-secretId: 690706b6fcfae1a75a5fd2ce
+codeIntegrationId:
+projectId:
+secretId: 65f2c951132b10f04a3962ae
 entryFile: leap_integration.py
 include:
     - leap_binder.py
