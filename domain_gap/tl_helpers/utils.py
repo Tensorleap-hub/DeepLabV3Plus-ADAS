@@ -8,13 +8,14 @@ import tensorflow as tf
 # from tensorflow.python.ops import confusion_matrix
 # from tensorflow.python.ops import math_ops
 
+from code_loader.contract.enums import MetricDirection
 from domain_gap.utils.gcs_utils import _download
 from domain_gap.data.cs_data import Cityscapes, CATEGORIES
 from domain_gap.utils.config import CONFIG
 from code_loader.inner_leap_binder.leapbinder_decorators import (
     tensorleap_custom_metric )
 
-@tensorleap_custom_metric("iou_class")
+@tensorleap_custom_metric("iou_class", {f'{c}': MetricDirection.Upward for c in CATEGORIES})
 def class_mean_iou(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
@@ -53,7 +54,7 @@ def get_class_mean_iou(class_i: int = None):
 
     return class_mean_iou
 
-@tensorleap_custom_metric("iou")
+@tensorleap_custom_metric("iou", MetricDirection.Upward)
 def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
     """
     Calculate the mean Intersection over Union (mIOU) for segmentation using TensorFlow.
