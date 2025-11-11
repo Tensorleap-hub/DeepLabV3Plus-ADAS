@@ -58,6 +58,8 @@ def check_custom_integration(idx, subset):
     print(f"Metics: mean_iou - {metric_result}")
     class_iou_res = class_mean_iou(mask_gt, y_pred)
     print(f"Metics: class_mean_iou - {class_iou_res}")
+    class_percent_res = per_class_percentage(mask_gt, y_pred)
+    print(f"Metics: per_class_percentage - {class_percent_res}")
     # print metadata
     for metadata_func in (metadata_idx, metadata_class_percent, metadata_gps_heading, metadata_gps_latitude,
                           metadata_gps_longtitude, metadata_outside_temperature, metadata_speed, metadata_yaw_rate):

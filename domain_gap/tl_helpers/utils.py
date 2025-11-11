@@ -33,6 +33,23 @@ def class_mean_iou(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
         res[f'{c}'] = mean_iou(y_true_i, y_pred_i)
     return res
 
+# Add percentage of each class in the prediction mask
+@tensorleap_custom_metric("per_class_prediction_percentage", compute_insights={f'{c}': False for c in CATEGORIES})
+def per_class_percentage(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
+    #calculate percentage while keeping batch dim
+
+    res = {}
+    y_pred_flat = y_pred.reshape(y_pred.shape[0], -1, y_pred.shape[-1])
+    total_pixels = y_pred_flat.shape[1]
+    for i, c in enumerate(CATEGORIES):
+        y_pred_i = y_pred_flat[..., i]
+        sigmoid_pred_i = 1 / (1 + np.exp(-y_pred_i))
+        sigmoid_pred_i = (sigmoid_pred_i > 0.5).astype(np.float32)
+        class_pixels = np.sum(sigmoid_pred_i, axis=-1)
+        percentage = class_pixels / total_pixels * 100.0
+        res[f'{c}'] = percentage.astype(np.float32)
+    return res
+
 
 def get_class_mean_iou(class_i: int = None):
 
@@ -67,17 +84,19 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
         np.ndarray: Mean Intersection over Union (mIOU) value.
     """
     # Flatten the tensors
-    y_true_flat = tf.reshape(y_true, [y_true.shape[0], -1])
-    y_pred_flat = tf.cast(tf.reshape(y_pred, [y_true.shape[0], -1]), y_true_flat.dtype)
+    y_true_flat = y_true.reshape(y_true.shape[0], -1)
+    y_pred_flat = y_pred.reshape(y_pred.shape[0], -1).astype(y_true.dtype)
+    y_pred_flat = 1 / (1 + np.exp(-y_pred_flat))
+    y_pred_bin = (y_pred_flat > 0.5).astype(np.float32)
 
     # Calculate the intersection and union
-    intersection = tf.reduce_sum(y_true_flat * y_pred_flat, -1)
-    union = tf.reduce_sum(tf.maximum(y_true_flat, y_pred_flat), -1)
+    intersection = np.sum(y_true_flat * y_pred_bin, axis=-1)
+    union = np.sum(np.maximum(y_true_flat, y_pred_bin), axis=-1)
 
-    # Calculate the IOU value
-    iou = tf.where(union > 0, intersection / union, 0)
-
-    return iou.numpy()
+    # Compute IoU, avoid division by zero
+    iou = intersection / union if union > 0 else np.nan
+    iou = iou.astype(np.float32)
+    return iou
 
 def get_categorical_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
