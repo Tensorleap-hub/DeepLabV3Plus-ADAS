@@ -33,8 +33,7 @@ def check_custom_integration(idx, subset):
     model = load_model()
     # get plot images
     image = input_image(idx, subset)  # get specific image
-    non_norm_image = non_normalized_input_image(idx, subset)  # get specific image
-
+    # image = non_normalized_input_image(idx, subset)  # get specific image
     # get gt
     mask_gt = ground_truth_mask(idx, subset)  # get image gt
     # predict
@@ -45,9 +44,9 @@ def check_custom_integration(idx, subset):
     un_norm_image_vis = image_visualizer_unnorm(image)
 
     cityscape_segmentation_visualizer_ = cityscape_segmentation_visualizer(mask_gt)
-    mask_gt_vis = mask_visualizer(non_norm_image, mask_gt)
-    mask_pred_vis = mask_visualizer(non_norm_image, y_pred)
-    loss_visualizer_img = loss_visualizer(non_norm_image, y_pred, mask_gt)
+    mask_gt_vis = mask_visualizer(image, mask_gt)
+    mask_pred_vis = mask_visualizer(image, y_pred)
+    loss_visualizer_img = loss_visualizer(image, y_pred, mask_gt)
     ls = custom_loss(mask_gt, y_pred)
     if plot:
         visualize(image_visualizer_, "Input Image")

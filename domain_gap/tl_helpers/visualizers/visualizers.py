@@ -15,6 +15,11 @@ def image_visualizer(image: npt.NDArray[np.float32]) -> LeapImage:
     image = np.squeeze(image)
     return LeapImage((unnormalize_image(image) * 255).astype(np.uint8))
 
+@tensorleap_custom_visualizer("image_visualizer_unnorm", LeapDataType.Image)
+def image_visualizer_unnorm(image: npt.NDArray[np.float32]) -> LeapImage:
+    image = np.squeeze(image)
+    return LeapImage((image * 255).astype(np.uint8))
+
 @tensorleap_custom_visualizer("mask_visualizer", LeapDataType.ImageMask)
 def mask_visualizer(image: npt.NDArray[np.float32], mask: npt.NDArray[np.uint8]) -> LeapImageMask:
     image = np.squeeze(image)
