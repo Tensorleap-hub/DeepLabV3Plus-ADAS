@@ -94,7 +94,7 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
     union = np.sum(np.maximum(y_true_flat, y_pred_bin), axis=-1)
 
     # Compute IoU, avoid division by zero
-    iou = intersection / union if union > 0 else np.nan
+    iou = intersection / union if union > 0 else np.array([np.nan] * y_true.shape[0])
     iou = iou.astype(np.float32)
     return iou
 
