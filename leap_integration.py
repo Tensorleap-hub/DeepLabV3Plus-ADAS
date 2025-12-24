@@ -32,23 +32,28 @@ def check_custom_integration(idx, subset):
     plot = True
     model = load_model()
     # get plot images
-    image = input_image(idx, subset)  # get specific image
+    norm_image = input_image(idx, subset)  # get specific image
+    non_norm_image = non_normalized_input_image(idx, subset)  # get specific image
+
+    # predict
+    y_pred = model([non_norm_image])  # infer and get model prediction
+
+    # vis
+    image_visualizer_ = image_visualizer(norm_image)
+    un_norm_image_vis = image_visualizer_unnorm(non_norm_image)
+
     # get gt
     mask_gt = ground_truth_mask(idx, subset)  # get image gt
 
-    # predict
-    y_pred = model([image])  # infer and get model prediction
 
-    # vis
-    image_visualizer_ = image_visualizer(image)
-    cityscape_segmentation_visualizer_ = cityscape_segmentation_visualizer(mask_gt)
-    mask_gt_vis = mask_visualizer(image, mask_gt)
-    mask_pred_vis = mask_visualizer(image, y_pred)
-    loss_visualizer_img = loss_visualizer(image, y_pred, mask_gt)
+    mask_gt_vis = mask_visualizer(norm_image, mask_gt)
+    mask_pred_vis = mask_visualizer(norm_image, y_pred)
+    loss_visualizer_img = loss_visualizer(norm_image, y_pred, mask_gt)
     ls = custom_loss(mask_gt, y_pred)
+
     if plot:
         visualize(image_visualizer_, "Input Image")
-        visualize(cityscape_segmentation_visualizer_)
+        visualize(un_norm_image_vis, "Input Image Unnorm")
         visualize(mask_gt_vis, "GT Mask")
         visualize(mask_pred_vis, "Predicted Mask")
         visualize(loss_visualizer_img, "Loss Vis")

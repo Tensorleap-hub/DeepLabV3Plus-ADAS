@@ -11,7 +11,7 @@ from domain_gap.data.cs_data import Cityscapes, CATEGORIES
 from domain_gap.utils.gcs_utils import _download
 from domain_gap.tl_helpers.preprocess import subset_images
 from domain_gap.tl_helpers.visualizers.visualizers import image_visualizer, loss_visualizer, mask_visualizer, \
-    cityscape_segmentation_visualizer
+    cityscape_segmentation_visualizer, image_visualizer_unnorm
 from domain_gap.tl_helpers.utils import get_categorical_mask, get_metadata_json, class_mean_iou, mean_iou, per_class_percentage
 from domain_gap.utils.config import CONFIG
 import numpy as np
