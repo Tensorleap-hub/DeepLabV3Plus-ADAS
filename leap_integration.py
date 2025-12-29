@@ -12,7 +12,7 @@ from code_loader.contract.datasetclasses import PredictionTypeHandler
 from code_loader.inner_leap_binder.leapbinder_decorators import tensorleap_load_model, tensorleap_integration_test
 
 
-prediction_type1 = PredictionTypeHandler('seg_mask', CATEGORIES)
+prediction_type1 = PredictionTypeHandler('seg_mask', CATEGORIES,channel_dim=-1)
 
 @tensorleap_load_model([prediction_type1])
 def load_model():

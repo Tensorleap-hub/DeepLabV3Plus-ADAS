@@ -34,7 +34,7 @@ def class_mean_iou(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
     return res
 
 # Add percentage of each class in the prediction mask
-@tensorleap_custom_metric("per_class_prediction_percentage", compute_insights={f'{c}': False for c in CATEGORIES})
+@tensorleap_custom_metric("per_class_prediction_percentage", compute_insights={f'{c}': False for c in CATEGORIES},direction=MetricDirection.Downward)
 def per_class_percentage(y_true: np.ndarray, y_pred: np.ndarray) -> dict:
     #calculate percentage while keeping batch dim
 
