@@ -22,7 +22,7 @@ from code_loader.inner_leap_binder.leapbinder_decorators import (
 
 # ----------------------------------- Input ------------------------------------------
 
-@tensorleap_input_encoder('non_normalized')
+@tensorleap_input_encoder('non_normalized',channel_dim=-1)
 def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
     cloud_path = data['image_path'][idx % data["real_size"]]
@@ -30,7 +30,7 @@ def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray
     img = np.array(Image.open(fpath).convert('RGB').resize(CONFIG['IMAGE_SIZE'])) / 255.
     return img.astype(np.float32)
 
-@tensorleap_input_encoder('normalized_image')
+@tensorleap_input_encoder('normalized_image',channel_dim=-1)
 def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     img = non_normalized_input_image(idx % data.data["real_size"], data)
     if data.data['dataset'][idx % data.data["real_size"]] == 'kitti':
