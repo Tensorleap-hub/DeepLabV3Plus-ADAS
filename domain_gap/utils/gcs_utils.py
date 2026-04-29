@@ -39,8 +39,7 @@ def _download(cloud_file_path: str, local_file_path: Optional[str] = None, is_lo
             local_file_path = join(CONFIG['LOCAL_BASE_PATH'], cloud_file_path)
         else:
             home_dir = "/fsx" if use_fsx else os.getenv("HOME")
-            local_file_path =  os.path.join(home_dir, "Tensorleap", CONFIG['BUCKET_NAME'], cloud_file_path)
-
+            local_file_path = join(CONFIG['LOCAL_BASE_PATH'], cloud_file_path)
     # check if file already exists
     if os.path.exists(local_file_path):
         return local_file_path

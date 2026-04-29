@@ -146,6 +146,7 @@ def custom_loss(ground_truth: np.array, prediction: np.array) -> np.array:
     ls_image = tf.reduce_mean(ls_batch, axis=[1, 2])
     return ls_image.numpy()
 
+leap_binder.leap_analysis_configuration.domain_gap_metadata = ['city']
 
 if __name__ == "__main__":
     leap_binder.check()

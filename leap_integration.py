@@ -29,14 +29,14 @@ def load_model():
 @tensorleap_integration_test()
 def check_custom_integration(idx, subset):
     print("stated testing")
-    plot = True
+    plot = False
     model = load_model()
     # get plot images
     norm_image = input_image(idx, subset)  # get specific image
     non_norm_image = non_normalized_input_image(idx, subset)  # get specific image
 
     # predict
-    y_pred = model([non_norm_image])  # infer and get model prediction
+    y_pred = model([norm_image])  # infer and get model prediction
 
     # vis
     image_visualizer_ = image_visualizer(norm_image)
