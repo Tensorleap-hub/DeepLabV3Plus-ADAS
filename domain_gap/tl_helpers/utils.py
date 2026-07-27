@@ -1,4 +1,5 @@
 import json
+import os
 from typing import Dict
 import numpy as np
 from code_loader.contract.datasetclasses import PreprocessResponse
@@ -101,7 +102,7 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
 def get_categorical_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
     cloud_path = data['gt_path'][idx % data["real_size"]]
-    fpath = _download(cloud_path)
+    fpath = cloud_path if os.path.exists(cloud_path) else _download(cloud_path)
     mask = np.array(Image.open(fpath).resize(CONFIG['IMAGE_SIZE'], Image.Resampling.NEAREST))
     if data['dataset'][idx % data["real_size"]] == 'cityscapes':
         encoded_mask = Cityscapes.encode_target_cityscapes(mask)
@@ -112,7 +113,9 @@ def get_categorical_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
 
 def get_metadata_json(idx: int, data: PreprocessResponse) -> Dict[str, str]:
     cloud_path = data.data['metadata'][idx]
-    fpath = _download(cloud_path)
+    if not cloud_path:
+        return {}
+    fpath = cloud_path if os.path.exists(cloud_path) else _download(cloud_path)
     with open(fpath, 'r') as f:
         metadata_dict = json.loads(f.read())
     return metadata_dict

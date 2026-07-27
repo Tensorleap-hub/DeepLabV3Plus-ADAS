@@ -1,11 +1,14 @@
-projectId: 65e5a309a6b076d49d3ba314
-secretId: 65f2c951132b10f04a3962ae
+projectId: 6a61fb2f78bed7a114c8f444
+secretId: ""
 entryFile: leap_integration.py
 include:
     - leap_binder.py
     - leap_integration.py
     - domain_gap/data/cs_data.py
     - domain_gap/data/kitti_data.py
+    - domain_gap/data/prepare_unlabled.py
+    - domain_gap/data/prepare_local_csv_splits.py
+    - domain_gap/data/download_original_csv_splits.py
     - domain_gap/tl_helpers/preprocess.py
     - domain_gap/tl_helpers/utils.py
     - domain_gap/tl_helpers/visualizers/visualizers.py

@@ -9,7 +9,7 @@ from code_loader.contract.enums import (
 
 from domain_gap.data.cs_data import Cityscapes, CATEGORIES
 from domain_gap.utils.gcs_utils import _download
-from domain_gap.tl_helpers.preprocess import subset_images
+from domain_gap.tl_helpers.preprocess import subset_images, unlabeled_images
 from domain_gap.tl_helpers.visualizers.visualizers import image_visualizer, loss_visualizer, mask_visualizer, \
     cityscape_segmentation_visualizer, image_visualizer_unnorm
 from domain_gap.tl_helpers.utils import get_categorical_mask, get_metadata_json, class_mean_iou, mean_iou, per_class_percentage
@@ -25,8 +25,8 @@ from code_loader.inner_leap_binder.leapbinder_decorators import (
 @tensorleap_input_encoder('non_normalized',channel_dim=-1)
 def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
     data = data.data
-    cloud_path = data['image_path'][idx % data["real_size"]]
-    fpath = _download(str(cloud_path))
+    cloud_path = str(data['image_path'][idx % data["real_size"]])
+    fpath = cloud_path if os.path.exists(cloud_path) else _download(cloud_path)
     img = np.array(Image.open(fpath).convert('RGB').resize(CONFIG['IMAGE_SIZE'])) / 255.
     return img.astype(np.float32)
 
@@ -43,6 +43,8 @@ def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
 
 @tensorleap_gt_encoder("mask")
 def ground_truth_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
+    if not data.data['gt_path'][idx % data.data["real_size"]]:
+        return np.array([], dtype=np.float32)
     mask = get_categorical_mask(idx % data.data["real_size"], data)
     return tf.keras.utils.to_categorical(mask, num_classes=20).astype(float)[...,:19].astype(np.float32)  # Remove background class from cross-entropy
 
@@ -56,6 +58,8 @@ def metadata_idx(idx: int, data: PreprocessResponse) -> int:
 
 @tensorleap_metadata("class_percent")
 def metadata_class_percent(idx: int, data: PreprocessResponse) -> dict:
+    if not data.data['gt_path'][idx % data.data["real_size"]]:
+        return {}
     res = {}
     mask = get_categorical_mask(idx % data.data["real_size"], data)
     unique, counts = np.unique(mask, return_counts=True)
@@ -91,7 +95,7 @@ def metadata_dataset(idx: int, data: PreprocessResponse) -> str:
 def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['gpsHeading']
+        return get_metadata_json(idx, data).get('gpsHeading', CONFIG['DEFAULT_GPS_HEADING'])
     else:
         return CONFIG['DEFAULT_GPS_HEADING']
 
@@ -99,7 +103,7 @@ def metadata_gps_heading(idx: int, data: PreprocessResponse) -> float:
 def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['gpsLatitude']
+        return get_metadata_json(idx, data).get('gpsLatitude', CONFIG['DEFAULT_GPS_LATITUDE'])
     else:
         return CONFIG['DEFAULT_GPS_LATITUDE']
 
@@ -107,7 +111,7 @@ def metadata_gps_latitude(idx: int, data: PreprocessResponse) -> float:
 def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['gpsLongitude']
+        return get_metadata_json(idx, data).get('gpsLongitude', CONFIG['DEFAULT_GPS_LONGTITUDE'])
     else:
         return CONFIG['DEFAULT_GPS_LONGTITUDE']
 
@@ -115,7 +119,7 @@ def metadata_gps_longtitude(idx: int, data: PreprocessResponse) -> float:
 def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['outsideTemperature']
+        return get_metadata_json(idx, data).get('outsideTemperature', CONFIG['DEFAULT_TEMP'])
     else:
         return CONFIG['DEFAULT_TEMP']
 
@@ -123,7 +127,7 @@ def metadata_outside_temperature(idx: int, data: PreprocessResponse) -> float:
 def metadata_speed(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['speed']
+        return get_metadata_json(idx, data).get('speed', CONFIG['DEFAULT_SPEED'])
     else:
         return CONFIG['DEFAULT_SPEED']
 
@@ -131,7 +135,7 @@ def metadata_speed(idx: int, data: PreprocessResponse) -> float:
 def metadata_yaw_rate(idx: int, data: PreprocessResponse) -> float:
     idx = idx % data.data["real_size"]
     if data.data['dataset'][idx] == "cityscapes":
-        return get_metadata_json(idx, data)['yawRate']
+        return get_metadata_json(idx, data).get('yawRate', CONFIG['DEFAULT_YAW_RATE'])
     else:
         return CONFIG['DEFAULT_YAW_RATE']
 
