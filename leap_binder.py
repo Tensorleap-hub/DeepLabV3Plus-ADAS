@@ -32,7 +32,8 @@ def non_normalized_input_image(idx: int, data: PreprocessResponse) -> np.ndarray
 
 @tensorleap_input_encoder('normalized_image',channel_dim=-1)
 def input_image(idx: int, data: PreprocessResponse) -> np.ndarray:
-    img = non_normalized_input_image(idx % data.data["real_size"], data)
+    img \
+        = non_normalized_input_image(idx % data.data["real_size"], data)
     if data.data['dataset'][idx % data.data["real_size"]] == 'kitti':
         img = (img - CONFIG['KITTI_MEAN']) * CONFIG['CITYSCAPES_STD'] / CONFIG['KITTI_STD'] + CONFIG['CITYSCAPES_MEAN']
     normalized_image = (img - CONFIG['IMAGE_MEAN']) / CONFIG['IMAGE_STD']
@@ -59,7 +60,7 @@ def metadata_idx(idx: int, data: PreprocessResponse) -> int:
 @tensorleap_metadata("class_percent")
 def metadata_class_percent(idx: int, data: PreprocessResponse) -> dict:
     if not data.data['gt_path'][idx % data.data["real_size"]]:
-        return {}
+        return {f'{c}': None for c in CATEGORIES + ["background"]}
     res = {}
     mask = get_categorical_mask(idx % data.data["real_size"], data)
     unique, counts = np.unique(mask, return_counts=True)

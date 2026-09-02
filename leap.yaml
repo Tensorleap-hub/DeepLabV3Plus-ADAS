@@ -1,4 +1,4 @@
-projectId: 6a61fb2f78bed7a114c8f444
+projectId: 6a67b3ea569d9994cd310179
 secretId: ""
 entryFile: leap_integration.py
 include:
@@ -17,4 +17,5 @@ include:
     - domain_gap/utils/gcs_utils.py
     - domain_gap/utils/project_config.yaml
     - requirements.txt
+    - insight-2-deeplab.csv
 pythonVersion: py38
