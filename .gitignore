@@ -1,5 +1,6 @@
 .terraform*
 .idea/
+.DS_Store
 __pycache__/
 *.csv
 .python-version
@@ -9,7 +10,9 @@ __pycache__/
 examples/imdb/aclImdb/
 examples/coco/coco/coco_data/
 *.json
-!domain_gap/data/splits/**/*.json
+!domain_gap/data/splits/**/train.json
+!domain_gap/data/splits/**/val.json
+!domain_gap/data/splits/**/manifest.json
 examples/coco/.tensorleap/config.toml
 
 # armbench_segmentation

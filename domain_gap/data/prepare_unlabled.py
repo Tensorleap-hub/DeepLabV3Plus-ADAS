@@ -1,18 +1,25 @@
 #!/usr/bin/env python3
+"""Regenerate the unlabeled_subset recipe. Cityscapes frames (with fine GT) already live
+in the datasets-reteai bucket, so they are emitted as cloud paths; the raw KITTI Karlsruhe
+frames do not, so they are uploaded to KITTI/raw_karlsruhe/ and then emitted as cloud
+paths. Selection still reads the local raw mirrors (vegetation scoring, drive walk)."""
 import argparse
 import json
 import os
-import shutil
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
+from domain_gap.utils.gcs_utils import _connect_to_gcs_and_return_bucket
+from domain_gap.utils.config import CONFIG
+
 
 VEGETATION_ID = 21
+KITTI_RAW_PREFIX = "KITTI/raw_karlsruhe"
 DEFAULT_CITYSCAPES_ROOT = Path(os.environ.get("CITYSCAPES_ROOT", "/Users/orram/Tensorleap/data/cityscapes"))
 DEFAULT_KITTI_ROOT = Path(os.environ.get("KITTI_ROOT", "/Users/orram/Tensorleap/data/kitti"))
-DEFAULT_EXCLUDE_SPLITS_ROOT = Path("domain_gap/data/datasets/local_csv_subset")
+DEFAULT_EXCLUDE_SPLITS_ROOT = Path("domain_gap/data/splits/original_csv_subset")
 DEFAULT_CITYSCAPES_CITIES = ("tubingen", "munster", "bremen")
 
 
@@ -52,7 +59,7 @@ def load_excluded_stems(root):
     return excluded
 
 
-def select_cityscapes(root, output, threshold, limit, cities, excluded_stems):
+def select_cityscapes(root, bucket, threshold, limit, cities, excluded_stems):
     selected = []
     allowed_cities = set(cities) if cities else None
 
@@ -111,26 +118,26 @@ def select_cityscapes(root, output, threshold, limit, cities, excluded_stems):
     if limit is not None:
         selected = selected[:limit]
 
-    output.mkdir(parents=True, exist_ok=True)
-
     manifest = []
     for sample in selected:
         source = sample.pop("source")
-        destination = output / source.name
-        shutil.copy2(source, destination)
+        cloud_path = f"Cityscapes/{source.relative_to(root).as_posix()}"
+        if not bucket.blob(cloud_path).exists():
+            print(f"Skipping cityscapes frame absent from bucket: {cloud_path}")
+            continue
 
         manifest.append({
             **sample,
-            "path": str(destination),
-            "filename": destination.name,
+            "path": cloud_path,
+            "filename": source.name,
         })
 
     return manifest
 
 
-def select_kitti(root, output, stride, limit):
-    # Each drive reuses frame names such as 0000000000.png,
-    # so the drive ID is added to the copied filename.
+def select_kitti(root, bucket, stride, limit):
+    # Each drive reuses frame names such as 0000000000.png, so the drive ID is added to
+    # the uploaded filename. Raw KITTI frames are not in the bucket, so upload each one.
     paths = sorted(root.glob(
         "**/*_drive_*_sync/image_02/data/*.png"
     ))
@@ -138,8 +145,6 @@ def select_kitti(root, output, stride, limit):
     selected = paths[::stride]
     if limit is not None:
         selected = selected[:limit]
-
-    output.mkdir(parents=True, exist_ok=True)
 
     manifest = []
     for source in selected:
@@ -149,8 +154,11 @@ def select_kitti(root, output, stride, limit):
         )
         drive = remove_suffix(drive_dir.name, "_sync")
 
-        destination = output / f"{drive}_{source.name}"
-        shutil.copy2(source, destination)
+        filename = f"{drive}_{source.name}"
+        cloud_path = f"{KITTI_RAW_PREFIX}/{filename}"
+        blob = bucket.blob(cloud_path)
+        if not blob.exists():
+            blob.upload_from_filename(str(source))
 
         manifest.append({
             "dataset": "kitti_raw",
@@ -159,8 +167,8 @@ def select_kitti(root, output, stride, limit):
             "frame": source.stem,
             "vegetation_percent": None,
             "selection_reason": "karlsruhe",
-            "path": str(destination),
-            "filename": destination.name,
+            "path": cloud_path,
+            "filename": filename,
         })
 
     return manifest
@@ -181,7 +189,7 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("datasets/unlabeled_subset"),
+        default=Path("domain_gap/data/splits/unlabeled_subset"),
     )
     parser.add_argument(
         "--vegetation-threshold",
@@ -203,10 +211,11 @@ def main():
     parser.add_argument("--kitti-stride", type=positive_int, default=10)
     args = parser.parse_args()
     excluded_stems = load_excluded_stems(args.exclude_splits_root)
+    bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
 
     cityscapes = select_cityscapes(
         root=args.cityscapes_root,
-        output=args.output / "cityscapes_high_vegetation",
+        bucket=bucket,
         threshold=args.vegetation_threshold,
         limit=args.max_cityscapes,
         cities=args.cityscapes_cities,
@@ -215,12 +224,13 @@ def main():
 
     kitti = select_kitti(
         root=args.kitti_root,
-        output=args.output / "kitti_karlsruhe",
+        bucket=bucket,
         stride=args.kitti_stride,
         limit=args.max_kitti,
     )
 
     manifest = cityscapes + kitti
+    args.output.mkdir(parents=True, exist_ok=True)
     manifest_path = args.output / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2))
 

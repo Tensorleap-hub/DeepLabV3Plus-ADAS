@@ -7,7 +7,6 @@ include:
     - domain_gap/data/cs_data.py
     - domain_gap/data/kitti_data.py
     - domain_gap/data/prepare_unlabled.py
-    - domain_gap/data/prepare_local_csv_splits.py
     - domain_gap/data/download_original_csv_splits.py
     - domain_gap/data/splits/original_csv_subset/train.json
     - domain_gap/data/splits/original_csv_subset/val.json

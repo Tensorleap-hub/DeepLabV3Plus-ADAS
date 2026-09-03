@@ -7,14 +7,15 @@ import random
 from collections import Counter
 from pathlib import Path
 
-from domain_gap.utils.gcs_utils import _download
+from domain_gap.utils.gcs_utils import _connect_to_gcs_and_return_bucket
+from domain_gap.utils.config import CONFIG
 
 
 DEFAULT_CSV_PATHS = [
     Path("domain_gap_samples.csv"),
     Path("domian_gap_samples.csv"),
 ]
-DEFAULT_OUTPUT = Path("domain_gap/data/datasets/original_csv_subset")
+DEFAULT_OUTPUT = Path("domain_gap/data/splits/original_csv_subset")
 DEFAULT_INSIGHT_CSV = Path("insight-2-deeplab.csv")
 DATASETS = ("cityscapes", "kitti")
 
@@ -55,41 +56,25 @@ def kitti_paths(row):
     }
 
 
-def local_path(output, cloud_path):
-    return output / "files" / cloud_path
-
-
-def download_required_files(sample, output):
-    downloaded = {}
+def validate_files(sample, bucket):
+    """Confirm each referenced blob exists in the bucket without downloading it. Required
+    image/gt paths stay as cloud paths; optional gt_image/metadata that are absent are
+    blanked so the runtime never tries to fetch a missing blob."""
+    validated = dict(sample)
     missing = []
     for key in ("image_path", "gt_path", "gt_image_path", "metadata"):
         cloud_path = sample[key]
         if not cloud_path:
-            downloaded[key] = ""
             continue
-
-        target = local_path(output, cloud_path)
-        try:
-            downloaded[key] = _download(cloud_path, local_file_path=str(target))
-        except Exception as error:
-            downloaded[key] = ""
-            missing.append({
-                "path_type": key,
-                "cloud_path": cloud_path,
-                "error": str(error),
-            })
+        if not bucket.blob(cloud_path).exists():
+            validated[key] = ""
+            missing.append({"path_type": key, "cloud_path": cloud_path})
 
     required_missing = [item for item in missing if item["path_type"] in ("image_path", "gt_path")]
     if required_missing:
         return None, missing
 
-    return {
-        **sample,
-        "image_path": downloaded["image_path"],
-        "gt_path": downloaded["gt_path"],
-        "gt_image_path": downloaded["gt_image_path"],
-        "metadata": downloaded["metadata"],
-    }, missing
+    return validated, missing
 
 
 def response_data(samples, subset_name):
@@ -182,6 +167,7 @@ def main():
 
     rows = list(csv.DictReader(args.csv.open(newline="")))
     low_perf = load_low_perf_file_names(args.insight_csv)
+    bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
     samples = []
     missing = []
 
@@ -198,8 +184,8 @@ def main():
             })
             continue
 
-        downloaded_sample, sample_missing = download_required_files(sample, args.output)
-        if downloaded_sample is None:
+        validated_sample, sample_missing = validate_files(sample, bucket)
+        if validated_sample is None:
             missing.append({
                 "dataset": sample["dataset"],
                 "filename": sample["file_name"],
@@ -216,7 +202,7 @@ def main():
                 "missing": [item],
             })
 
-        samples.append(downloaded_sample)
+        samples.append(validated_sample)
 
     train_samples, val_samples = assign_splits(
         samples,
