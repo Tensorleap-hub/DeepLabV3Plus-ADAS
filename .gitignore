@@ -9,6 +9,7 @@ __pycache__/
 examples/imdb/aclImdb/
 examples/coco/coco/coco_data/
 *.json
+!domain_gap/data/splits/**/*.json
 examples/coco/.tensorleap/config.toml
 
 # armbench_segmentation

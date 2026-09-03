@@ -28,5 +28,7 @@ DEFAULT_TEMP: 19.5
 DEFAULT_SPEED: 10.81
 DEFAULT_YAW_RATE: 0.171
 USE_LOCAL: True
+# Writable cache dir. Split recipes ship in the repo (domain_gap/data/splits); every
+# image/GT they reference is fetched from the datasets-reteai bucket by cloud path and
+# cached here on first use, so any writable path works on a fresh machine.
 LOCAL_BASE_PATH: /Users/orram/Tensorleap/data/domain-gap
-UNLABELED_CITYSCAPES_GT_ROOT: /Users/orram/Tensorleap/data/cityscapes

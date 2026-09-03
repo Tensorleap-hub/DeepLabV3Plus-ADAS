@@ -1,0 +1,2778 @@
+[
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 52.086591720581055,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000116_000019_leftImg8bit.png",
+    "filename": "munster_000116_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 49.686336517333984,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000045_000019_leftImg8bit.png",
+    "filename": "tubingen_000045_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 49.25379753112793,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000006_000019_leftImg8bit.png",
+    "filename": "tubingen_000006_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 47.79934883117676,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000093_000019_leftImg8bit.png",
+    "filename": "tubingen_000093_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 45.72186470031738,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000047_000019_leftImg8bit.png",
+    "filename": "munster_000047_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 44.56324577331543,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000294_000019_leftImg8bit.png",
+    "filename": "bremen_000294_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 44.25792694091797,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000136_000019_leftImg8bit.png",
+    "filename": "tubingen_000136_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 44.03724670410156,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000114_000019_leftImg8bit.png",
+    "filename": "tubingen_000114_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 43.949174880981445,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000103_000019_leftImg8bit.png",
+    "filename": "tubingen_000103_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 43.90735626220703,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000063_000019_leftImg8bit.png",
+    "filename": "munster_000063_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 43.772315979003906,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000106_000019_leftImg8bit.png",
+    "filename": "tubingen_000106_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 43.39127540588379,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000127_000019_leftImg8bit.png",
+    "filename": "bremen_000127_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 42.6722526550293,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000118_000019_leftImg8bit.png",
+    "filename": "tubingen_000118_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 42.44656562805176,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000301_000019_leftImg8bit.png",
+    "filename": "bremen_000301_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 42.39974021911621,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000096_000019_leftImg8bit.png",
+    "filename": "tubingen_000096_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 42.00844764709473,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000125_000019_leftImg8bit.png",
+    "filename": "tubingen_000125_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 41.87359809875488,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000117_000019_leftImg8bit.png",
+    "filename": "tubingen_000117_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 41.498565673828125,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000115_000019_leftImg8bit.png",
+    "filename": "tubingen_000115_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 41.037940979003906,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000117_000019_leftImg8bit.png",
+    "filename": "bremen_000117_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 40.668344497680664,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000104_000019_leftImg8bit.png",
+    "filename": "tubingen_000104_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 40.58117866516113,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000012_000019_leftImg8bit.png",
+    "filename": "tubingen_000012_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 40.1583194732666,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000133_000019_leftImg8bit.png",
+    "filename": "munster_000133_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 40.05236625671387,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000100_000019_leftImg8bit.png",
+    "filename": "munster_000100_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.808082580566406,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000165_000019_leftImg8bit.png",
+    "filename": "munster_000165_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 39.75372314453125,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000022_000019_leftImg8bit.png",
+    "filename": "tubingen_000022_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 39.595746994018555,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000291_000019_leftImg8bit.png",
+    "filename": "bremen_000291_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 39.58158493041992,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000013_000019_leftImg8bit.png",
+    "filename": "tubingen_000013_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.499711990356445,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000114_000019_leftImg8bit.png",
+    "filename": "munster_000114_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.38326835632324,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000164_000019_leftImg8bit.png",
+    "filename": "munster_000164_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 39.321279525756836,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000095_000019_leftImg8bit.png",
+    "filename": "tubingen_000095_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.32070732116699,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000039_000019_leftImg8bit.png",
+    "filename": "munster_000039_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.27474021911621,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000170_000019_leftImg8bit.png",
+    "filename": "munster_000170_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 39.168596267700195,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000084_000019_leftImg8bit.png",
+    "filename": "munster_000084_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 39.071035385131836,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000007_000019_leftImg8bit.png",
+    "filename": "tubingen_000007_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 38.69428634643555,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000121_000019_leftImg8bit.png",
+    "filename": "munster_000121_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 38.323211669921875,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000089_000019_leftImg8bit.png",
+    "filename": "tubingen_000089_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 37.89772987365723,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000112_000019_leftImg8bit.png",
+    "filename": "tubingen_000112_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 37.48888969421387,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000139_000019_leftImg8bit.png",
+    "filename": "tubingen_000139_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 37.43472099304199,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000124_000019_leftImg8bit.png",
+    "filename": "munster_000124_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 37.37378120422363,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000049_000019_leftImg8bit.png",
+    "filename": "bremen_000049_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 37.25423812866211,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000101_000019_leftImg8bit.png",
+    "filename": "munster_000101_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 37.23430633544922,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000116_000019_leftImg8bit.png",
+    "filename": "tubingen_000116_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 37.033653259277344,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000002_000019_leftImg8bit.png",
+    "filename": "munster_000002_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 36.846113204956055,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000026_000019_leftImg8bit.png",
+    "filename": "tubingen_000026_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 36.74483299255371,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000001_000019_leftImg8bit.png",
+    "filename": "munster_000001_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 36.637258529663086,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000118_000019_leftImg8bit.png",
+    "filename": "munster_000118_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 36.58308982849121,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000199_000019_leftImg8bit.png",
+    "filename": "bremen_000199_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 36.557626724243164,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000140_000019_leftImg8bit.png",
+    "filename": "tubingen_000140_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 36.34753227233887,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000111_000019_leftImg8bit.png",
+    "filename": "tubingen_000111_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 36.33685111999512,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000128_000019_leftImg8bit.png",
+    "filename": "bremen_000128_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 36.13886833190918,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000081_000019_leftImg8bit.png",
+    "filename": "bremen_000081_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 35.86931228637695,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000090_000019_leftImg8bit.png",
+    "filename": "munster_000090_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 35.816240310668945,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000162_000019_leftImg8bit.png",
+    "filename": "bremen_000162_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 35.764265060424805,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000020_000019_leftImg8bit.png",
+    "filename": "tubingen_000020_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 35.5288028717041,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000122_000019_leftImg8bit.png",
+    "filename": "munster_000122_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 35.50448417663574,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000094_000019_leftImg8bit.png",
+    "filename": "tubingen_000094_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 35.472965240478516,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000121_000019_leftImg8bit.png",
+    "filename": "bremen_000121_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 35.3032112121582,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000106_000019_leftImg8bit.png",
+    "filename": "munster_000106_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 35.26105880737305,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000138_000019_leftImg8bit.png",
+    "filename": "tubingen_000138_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 35.198259353637695,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000126_000019_leftImg8bit.png",
+    "filename": "tubingen_000126_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 35.04228591918945,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000093_000019_leftImg8bit.png",
+    "filename": "munster_000093_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 35.0311279296875,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000088_000019_leftImg8bit.png",
+    "filename": "tubingen_000088_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 34.9665641784668,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000300_000019_leftImg8bit.png",
+    "filename": "bremen_000300_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 34.88035202026367,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000016_000019_leftImg8bit.png",
+    "filename": "tubingen_000016_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 34.83157157897949,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000052_000019_leftImg8bit.png",
+    "filename": "tubingen_000052_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 34.728097915649414,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000077_000019_leftImg8bit.png",
+    "filename": "bremen_000077_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 34.68790054321289,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000129_000019_leftImg8bit.png",
+    "filename": "bremen_000129_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 34.657859802246094,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000040_000019_leftImg8bit.png",
+    "filename": "tubingen_000040_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 34.604644775390625,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000015_000019_leftImg8bit.png",
+    "filename": "tubingen_000015_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 34.21950340270996,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000134_000019_leftImg8bit.png",
+    "filename": "munster_000134_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 34.099626541137695,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000126_000019_leftImg8bit.png",
+    "filename": "bremen_000126_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 33.936452865600586,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000171_000019_leftImg8bit.png",
+    "filename": "munster_000171_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.83312225341797,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000135_000019_leftImg8bit.png",
+    "filename": "tubingen_000135_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.79340171813965,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000134_000019_leftImg8bit.png",
+    "filename": "tubingen_000134_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 33.77418518066406,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000170_000019_leftImg8bit.png",
+    "filename": "bremen_000170_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.71725082397461,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000133_000019_leftImg8bit.png",
+    "filename": "tubingen_000133_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 33.669376373291016,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000122_000019_leftImg8bit.png",
+    "filename": "bremen_000122_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.650922775268555,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000105_000019_leftImg8bit.png",
+    "filename": "tubingen_000105_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.64434242248535,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000110_000019_leftImg8bit.png",
+    "filename": "tubingen_000110_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 33.590126037597656,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000117_000019_leftImg8bit.png",
+    "filename": "munster_000117_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.512306213378906,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000097_000019_leftImg8bit.png",
+    "filename": "tubingen_000097_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 33.50529670715332,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000021_000019_leftImg8bit.png",
+    "filename": "munster_000021_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 33.24098587036133,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000263_000019_leftImg8bit.png",
+    "filename": "bremen_000263_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 33.234357833862305,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000200_000019_leftImg8bit.png",
+    "filename": "bremen_000200_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 33.22587013244629,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000134_000019_leftImg8bit.png",
+    "filename": "bremen_000134_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 33.002519607543945,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000037_000019_leftImg8bit.png",
+    "filename": "tubingen_000037_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 32.78498649597168,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000074_000019_leftImg8bit.png",
+    "filename": "tubingen_000074_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 32.7427864074707,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000021_000019_leftImg8bit.png",
+    "filename": "tubingen_000021_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 32.73053169250488,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000137_000019_leftImg8bit.png",
+    "filename": "munster_000137_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 32.61222839355469,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000125_000019_leftImg8bit.png",
+    "filename": "munster_000125_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 32.36393928527832,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000042_000019_leftImg8bit.png",
+    "filename": "tubingen_000042_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 32.29837417602539,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000019_000019_leftImg8bit.png",
+    "filename": "tubingen_000019_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 31.975698471069336,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000142_000019_leftImg8bit.png",
+    "filename": "tubingen_000142_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 31.853723526000977,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000157_000019_leftImg8bit.png",
+    "filename": "bremen_000157_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 31.722688674926758,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000113_000019_leftImg8bit.png",
+    "filename": "tubingen_000113_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 31.687450408935547,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000041_000019_leftImg8bit.png",
+    "filename": "tubingen_000041_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 31.507253646850586,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000091_000019_leftImg8bit.png",
+    "filename": "bremen_000091_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 31.32939338684082,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000094_000019_leftImg8bit.png",
+    "filename": "bremen_000094_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 31.288814544677734,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000131_000019_leftImg8bit.png",
+    "filename": "munster_000131_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 31.22091293334961,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000008_000019_leftImg8bit.png",
+    "filename": "tubingen_000008_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 31.208086013793945,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000092_000019_leftImg8bit.png",
+    "filename": "bremen_000092_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 31.201553344726562,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000163_000019_leftImg8bit.png",
+    "filename": "munster_000163_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 31.182384490966797,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000130_000019_leftImg8bit.png",
+    "filename": "munster_000130_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 31.1704158782959,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000101_000019_leftImg8bit.png",
+    "filename": "tubingen_000101_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 31.06207847595215,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000293_000019_leftImg8bit.png",
+    "filename": "bremen_000293_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 30.90667724609375,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000127_000019_leftImg8bit.png",
+    "filename": "tubingen_000127_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 30.839014053344727,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000009_000019_leftImg8bit.png",
+    "filename": "tubingen_000009_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 30.757570266723633,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000075_000019_leftImg8bit.png",
+    "filename": "tubingen_000075_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "tubingen",
+    "split": "train",
+    "vegetation_percent": 30.73587417602539,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/tubingen/tubingen_000132_000019_leftImg8bit.png",
+    "filename": "tubingen_000132_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 30.657434463500977,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000242_000019_leftImg8bit.png",
+    "filename": "bremen_000242_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "munster",
+    "split": "val",
+    "vegetation_percent": 30.597925186157227,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/munster/munster_000107_000019_leftImg8bit.png",
+    "filename": "munster_000107_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 30.34067153930664,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000112_000019_leftImg8bit.png",
+    "filename": "bremen_000112_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 30.29484748840332,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000279_000019_leftImg8bit.png",
+    "filename": "bremen_000279_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "cityscapes",
+    "city": "bremen",
+    "split": "train",
+    "vegetation_percent": 30.238914489746094,
+    "selection_reason": "high_vegetation",
+    "path": "Cityscapes/leftImg8bit_trainvaltest/leftImg8bit/train/bremen/bremen_000119_000019_leftImg8bit.png",
+    "filename": "bremen_000119_000019_leftImg8bit.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000000",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000000.png",
+    "filename": "2011_09_26_drive_0005_0000000000.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000010",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000010.png",
+    "filename": "2011_09_26_drive_0005_0000000010.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000020",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000020.png",
+    "filename": "2011_09_26_drive_0005_0000000020.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000030",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000030.png",
+    "filename": "2011_09_26_drive_0005_0000000030.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000040",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000040.png",
+    "filename": "2011_09_26_drive_0005_0000000040.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000050",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000050.png",
+    "filename": "2011_09_26_drive_0005_0000000050.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000060",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000060.png",
+    "filename": "2011_09_26_drive_0005_0000000060.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000070",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000070.png",
+    "filename": "2011_09_26_drive_0005_0000000070.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000080",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000080.png",
+    "filename": "2011_09_26_drive_0005_0000000080.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000090",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000090.png",
+    "filename": "2011_09_26_drive_0005_0000000090.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000100",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000100.png",
+    "filename": "2011_09_26_drive_0005_0000000100.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000110",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000110.png",
+    "filename": "2011_09_26_drive_0005_0000000110.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000120",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000120.png",
+    "filename": "2011_09_26_drive_0005_0000000120.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000130",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000130.png",
+    "filename": "2011_09_26_drive_0005_0000000130.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000140",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000140.png",
+    "filename": "2011_09_26_drive_0005_0000000140.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0005",
+    "frame": "0000000150",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0005_0000000150.png",
+    "filename": "2011_09_26_drive_0005_0000000150.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000006",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000006.png",
+    "filename": "2011_09_26_drive_0011_0000000006.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000016",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000016.png",
+    "filename": "2011_09_26_drive_0011_0000000016.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000026",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000026.png",
+    "filename": "2011_09_26_drive_0011_0000000026.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000036",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000036.png",
+    "filename": "2011_09_26_drive_0011_0000000036.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000046",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000046.png",
+    "filename": "2011_09_26_drive_0011_0000000046.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000056",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000056.png",
+    "filename": "2011_09_26_drive_0011_0000000056.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000066",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000066.png",
+    "filename": "2011_09_26_drive_0011_0000000066.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000076",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000076.png",
+    "filename": "2011_09_26_drive_0011_0000000076.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000086",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000086.png",
+    "filename": "2011_09_26_drive_0011_0000000086.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000096",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000096.png",
+    "filename": "2011_09_26_drive_0011_0000000096.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000106",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000106.png",
+    "filename": "2011_09_26_drive_0011_0000000106.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000116",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000116.png",
+    "filename": "2011_09_26_drive_0011_0000000116.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000126",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000126.png",
+    "filename": "2011_09_26_drive_0011_0000000126.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000136",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000136.png",
+    "filename": "2011_09_26_drive_0011_0000000136.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000146",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000146.png",
+    "filename": "2011_09_26_drive_0011_0000000146.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000156",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000156.png",
+    "filename": "2011_09_26_drive_0011_0000000156.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000166",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000166.png",
+    "filename": "2011_09_26_drive_0011_0000000166.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000176",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000176.png",
+    "filename": "2011_09_26_drive_0011_0000000176.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000186",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000186.png",
+    "filename": "2011_09_26_drive_0011_0000000186.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000196",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000196.png",
+    "filename": "2011_09_26_drive_0011_0000000196.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000206",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000206.png",
+    "filename": "2011_09_26_drive_0011_0000000206.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000216",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000216.png",
+    "filename": "2011_09_26_drive_0011_0000000216.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0011",
+    "frame": "0000000226",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0011_0000000226.png",
+    "filename": "2011_09_26_drive_0011_0000000226.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000003",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000003.png",
+    "filename": "2011_09_26_drive_0013_0000000003.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000013",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000013.png",
+    "filename": "2011_09_26_drive_0013_0000000013.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000023",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000023.png",
+    "filename": "2011_09_26_drive_0013_0000000023.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000033",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000033.png",
+    "filename": "2011_09_26_drive_0013_0000000033.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000043",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000043.png",
+    "filename": "2011_09_26_drive_0013_0000000043.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000053",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000053.png",
+    "filename": "2011_09_26_drive_0013_0000000053.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000063",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000063.png",
+    "filename": "2011_09_26_drive_0013_0000000063.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000073",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000073.png",
+    "filename": "2011_09_26_drive_0013_0000000073.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000083",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000083.png",
+    "filename": "2011_09_26_drive_0013_0000000083.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000093",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000093.png",
+    "filename": "2011_09_26_drive_0013_0000000093.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000103",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000103.png",
+    "filename": "2011_09_26_drive_0013_0000000103.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000113",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000113.png",
+    "filename": "2011_09_26_drive_0013_0000000113.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000123",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000123.png",
+    "filename": "2011_09_26_drive_0013_0000000123.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000133",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000133.png",
+    "filename": "2011_09_26_drive_0013_0000000133.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0013",
+    "frame": "0000000143",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0013_0000000143.png",
+    "filename": "2011_09_26_drive_0013_0000000143.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000009",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000009.png",
+    "filename": "2011_09_26_drive_0051_0000000009.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000019",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000019.png",
+    "filename": "2011_09_26_drive_0051_0000000019.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000029",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000029.png",
+    "filename": "2011_09_26_drive_0051_0000000029.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000039",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000039.png",
+    "filename": "2011_09_26_drive_0051_0000000039.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000049",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000049.png",
+    "filename": "2011_09_26_drive_0051_0000000049.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000059",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000059.png",
+    "filename": "2011_09_26_drive_0051_0000000059.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000069",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000069.png",
+    "filename": "2011_09_26_drive_0051_0000000069.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000079",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000079.png",
+    "filename": "2011_09_26_drive_0051_0000000079.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000089",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000089.png",
+    "filename": "2011_09_26_drive_0051_0000000089.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000099",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000099.png",
+    "filename": "2011_09_26_drive_0051_0000000099.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000109",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000109.png",
+    "filename": "2011_09_26_drive_0051_0000000109.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000119",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000119.png",
+    "filename": "2011_09_26_drive_0051_0000000119.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000129",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000129.png",
+    "filename": "2011_09_26_drive_0051_0000000129.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000139",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000139.png",
+    "filename": "2011_09_26_drive_0051_0000000139.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000149",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000149.png",
+    "filename": "2011_09_26_drive_0051_0000000149.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000159",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000159.png",
+    "filename": "2011_09_26_drive_0051_0000000159.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000169",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000169.png",
+    "filename": "2011_09_26_drive_0051_0000000169.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000179",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000179.png",
+    "filename": "2011_09_26_drive_0051_0000000179.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000189",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000189.png",
+    "filename": "2011_09_26_drive_0051_0000000189.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000199",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000199.png",
+    "filename": "2011_09_26_drive_0051_0000000199.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000209",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000209.png",
+    "filename": "2011_09_26_drive_0051_0000000209.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000219",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000219.png",
+    "filename": "2011_09_26_drive_0051_0000000219.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000229",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000229.png",
+    "filename": "2011_09_26_drive_0051_0000000229.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000239",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000239.png",
+    "filename": "2011_09_26_drive_0051_0000000239.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000249",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000249.png",
+    "filename": "2011_09_26_drive_0051_0000000249.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000259",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000259.png",
+    "filename": "2011_09_26_drive_0051_0000000259.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000269",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000269.png",
+    "filename": "2011_09_26_drive_0051_0000000269.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000279",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000279.png",
+    "filename": "2011_09_26_drive_0051_0000000279.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000289",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000289.png",
+    "filename": "2011_09_26_drive_0051_0000000289.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000299",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000299.png",
+    "filename": "2011_09_26_drive_0051_0000000299.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000309",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000309.png",
+    "filename": "2011_09_26_drive_0051_0000000309.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000319",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000319.png",
+    "filename": "2011_09_26_drive_0051_0000000319.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000329",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000329.png",
+    "filename": "2011_09_26_drive_0051_0000000329.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000339",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000339.png",
+    "filename": "2011_09_26_drive_0051_0000000339.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000349",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000349.png",
+    "filename": "2011_09_26_drive_0051_0000000349.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000359",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000359.png",
+    "filename": "2011_09_26_drive_0051_0000000359.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000369",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000369.png",
+    "filename": "2011_09_26_drive_0051_0000000369.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000379",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000379.png",
+    "filename": "2011_09_26_drive_0051_0000000379.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000389",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000389.png",
+    "filename": "2011_09_26_drive_0051_0000000389.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000399",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000399.png",
+    "filename": "2011_09_26_drive_0051_0000000399.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000409",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000409.png",
+    "filename": "2011_09_26_drive_0051_0000000409.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000419",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000419.png",
+    "filename": "2011_09_26_drive_0051_0000000419.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0051",
+    "frame": "0000000429",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0051_0000000429.png",
+    "filename": "2011_09_26_drive_0051_0000000429.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000001",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000001.png",
+    "filename": "2011_09_26_drive_0091_0000000001.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000011",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000011.png",
+    "filename": "2011_09_26_drive_0091_0000000011.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000021",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000021.png",
+    "filename": "2011_09_26_drive_0091_0000000021.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000031",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000031.png",
+    "filename": "2011_09_26_drive_0091_0000000031.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000041",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000041.png",
+    "filename": "2011_09_26_drive_0091_0000000041.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000051",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000051.png",
+    "filename": "2011_09_26_drive_0091_0000000051.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000061",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000061.png",
+    "filename": "2011_09_26_drive_0091_0000000061.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000071",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000071.png",
+    "filename": "2011_09_26_drive_0091_0000000071.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000081",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000081.png",
+    "filename": "2011_09_26_drive_0091_0000000081.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000091",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000091.png",
+    "filename": "2011_09_26_drive_0091_0000000091.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000101",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000101.png",
+    "filename": "2011_09_26_drive_0091_0000000101.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000111",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000111.png",
+    "filename": "2011_09_26_drive_0091_0000000111.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000121",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000121.png",
+    "filename": "2011_09_26_drive_0091_0000000121.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000131",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000131.png",
+    "filename": "2011_09_26_drive_0091_0000000131.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000141",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000141.png",
+    "filename": "2011_09_26_drive_0091_0000000141.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000151",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000151.png",
+    "filename": "2011_09_26_drive_0091_0000000151.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000161",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000161.png",
+    "filename": "2011_09_26_drive_0091_0000000161.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000171",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000171.png",
+    "filename": "2011_09_26_drive_0091_0000000171.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000181",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000181.png",
+    "filename": "2011_09_26_drive_0091_0000000181.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000191",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000191.png",
+    "filename": "2011_09_26_drive_0091_0000000191.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000201",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000201.png",
+    "filename": "2011_09_26_drive_0091_0000000201.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000211",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000211.png",
+    "filename": "2011_09_26_drive_0091_0000000211.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000221",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000221.png",
+    "filename": "2011_09_26_drive_0091_0000000221.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000231",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000231.png",
+    "filename": "2011_09_26_drive_0091_0000000231.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000241",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000241.png",
+    "filename": "2011_09_26_drive_0091_0000000241.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000251",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000251.png",
+    "filename": "2011_09_26_drive_0091_0000000251.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000261",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000261.png",
+    "filename": "2011_09_26_drive_0091_0000000261.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000271",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000271.png",
+    "filename": "2011_09_26_drive_0091_0000000271.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000281",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000281.png",
+    "filename": "2011_09_26_drive_0091_0000000281.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000291",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000291.png",
+    "filename": "2011_09_26_drive_0091_0000000291.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000301",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000301.png",
+    "filename": "2011_09_26_drive_0091_0000000301.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000311",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000311.png",
+    "filename": "2011_09_26_drive_0091_0000000311.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000321",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000321.png",
+    "filename": "2011_09_26_drive_0091_0000000321.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0091",
+    "frame": "0000000331",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0091_0000000331.png",
+    "filename": "2011_09_26_drive_0091_0000000331.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000001",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000001.png",
+    "filename": "2011_09_26_drive_0093_0000000001.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000011",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000011.png",
+    "filename": "2011_09_26_drive_0093_0000000011.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000021",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000021.png",
+    "filename": "2011_09_26_drive_0093_0000000021.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000031",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000031.png",
+    "filename": "2011_09_26_drive_0093_0000000031.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000041",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000041.png",
+    "filename": "2011_09_26_drive_0093_0000000041.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000051",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000051.png",
+    "filename": "2011_09_26_drive_0093_0000000051.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000061",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000061.png",
+    "filename": "2011_09_26_drive_0093_0000000061.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000071",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000071.png",
+    "filename": "2011_09_26_drive_0093_0000000071.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000081",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000081.png",
+    "filename": "2011_09_26_drive_0093_0000000081.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000091",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000091.png",
+    "filename": "2011_09_26_drive_0093_0000000091.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000101",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000101.png",
+    "filename": "2011_09_26_drive_0093_0000000101.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000111",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000111.png",
+    "filename": "2011_09_26_drive_0093_0000000111.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000121",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000121.png",
+    "filename": "2011_09_26_drive_0093_0000000121.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000131",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000131.png",
+    "filename": "2011_09_26_drive_0093_0000000131.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000141",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000141.png",
+    "filename": "2011_09_26_drive_0093_0000000141.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000151",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000151.png",
+    "filename": "2011_09_26_drive_0093_0000000151.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000161",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000161.png",
+    "filename": "2011_09_26_drive_0093_0000000161.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000171",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000171.png",
+    "filename": "2011_09_26_drive_0093_0000000171.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000181",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000181.png",
+    "filename": "2011_09_26_drive_0093_0000000181.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000191",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000191.png",
+    "filename": "2011_09_26_drive_0093_0000000191.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000201",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000201.png",
+    "filename": "2011_09_26_drive_0093_0000000201.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000211",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000211.png",
+    "filename": "2011_09_26_drive_0093_0000000211.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000221",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000221.png",
+    "filename": "2011_09_26_drive_0093_0000000221.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000231",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000231.png",
+    "filename": "2011_09_26_drive_0093_0000000231.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000241",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000241.png",
+    "filename": "2011_09_26_drive_0093_0000000241.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000251",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000251.png",
+    "filename": "2011_09_26_drive_0093_0000000251.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000261",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000261.png",
+    "filename": "2011_09_26_drive_0093_0000000261.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000271",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000271.png",
+    "filename": "2011_09_26_drive_0093_0000000271.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000281",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000281.png",
+    "filename": "2011_09_26_drive_0093_0000000281.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000291",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000291.png",
+    "filename": "2011_09_26_drive_0093_0000000291.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000301",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000301.png",
+    "filename": "2011_09_26_drive_0093_0000000301.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000311",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000311.png",
+    "filename": "2011_09_26_drive_0093_0000000311.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000321",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000321.png",
+    "filename": "2011_09_26_drive_0093_0000000321.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000331",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000331.png",
+    "filename": "2011_09_26_drive_0093_0000000331.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000341",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000341.png",
+    "filename": "2011_09_26_drive_0093_0000000341.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000351",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000351.png",
+    "filename": "2011_09_26_drive_0093_0000000351.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000361",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000361.png",
+    "filename": "2011_09_26_drive_0093_0000000361.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000371",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000371.png",
+    "filename": "2011_09_26_drive_0093_0000000371.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000381",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000381.png",
+    "filename": "2011_09_26_drive_0093_0000000381.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000391",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000391.png",
+    "filename": "2011_09_26_drive_0093_0000000391.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000401",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000401.png",
+    "filename": "2011_09_26_drive_0093_0000000401.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000411",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000411.png",
+    "filename": "2011_09_26_drive_0093_0000000411.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000421",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000421.png",
+    "filename": "2011_09_26_drive_0093_0000000421.png"
+  },
+  {
+    "dataset": "kitti_raw",
+    "city": "Karlsruhe",
+    "drive": "2011_09_26_drive_0093",
+    "frame": "0000000431",
+    "vegetation_percent": null,
+    "selection_reason": "karlsruhe",
+    "path": "KITTI/raw_karlsruhe/2011_09_26_drive_0093_0000000431.png",
+    "filename": "2011_09_26_drive_0093_0000000431.png"
+  }
+]
