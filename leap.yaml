@@ -1,5 +1,5 @@
-projectId: 6a67b3ea569d9994cd310179
-secretId: ""
+projectId: 69fb7b631922f222804a2f0c
+secretId: 69fb7b851922f222804a2f11
 entryFile: leap_integration.py
 include:
     - leap_binder.py
