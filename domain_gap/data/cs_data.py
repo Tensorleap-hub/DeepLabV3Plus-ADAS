@@ -3,7 +3,6 @@ from typing import List, Dict, Union
 from pathlib import Path
 from collections import namedtuple
 import numpy as np
-from code_loader.contract.datasetclasses import PreprocessResponse
 
 from domain_gap.utils.gcs_utils import _connect_to_gcs_and_return_bucket
 from domain_gap.utils.config import CONFIG
