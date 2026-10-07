@@ -28,8 +28,7 @@ def check_custom_integration():
     # gathering data
     for i in range(2):
         subset = responses[i]  # [training, validation, test]
-        for j in range(5):
-            idx = j
+        for idx in subset.sample_ids[:5]:
             # get plot images
             image = input_image(idx, subset)  # get specific image
             non_normalized_image = non_normalized_input_image(idx, subset)

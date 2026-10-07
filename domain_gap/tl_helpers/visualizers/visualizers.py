@@ -50,13 +50,15 @@ def cityscape_segmentation_visualizer(mask: npt.NDArray[np.uint8]) -> LeapImage:
 @tensorleap_custom_visualizer("loss_visualizer", LeapDataType.Image)
 def loss_visualizer(image: npt.NDArray[np.float32], prediction: npt.NDArray[np.float32], gt: npt.NDArray[np.float32]) -> LeapImage:
     image = np.squeeze(image)
-    prediction = np.squeeze(prediction)
-    gt = np.squeeze(gt)
+    prediction = np.squeeze(prediction).astype(np.float32)
+    gt = np.squeeze(gt).astype(np.float32)
     image = unnormalize_image(image)
     ls = tf.keras.losses.CategoricalCrossentropy(from_logits=True, reduction='none')
     ls_image = ls(gt, prediction).numpy()
-    ls_image = ls_image.clip(0, np.percentile(ls_image, 95))
-    ls_image /= ls_image.max()
+    valid = gt.sum(-1) > 0
+    ls_image = ls_image * valid
+    ls_image = ls_image.clip(0, np.percentile(ls_image[valid], 95) if valid.any() else 1.0)
+    ls_image /= max(ls_image.max(), 1e-8)
     heatmap = scalarMap.to_rgba(ls_image)[..., :-1]
     overlayed_image = ((heatmap * 0.4 + image * 0.6).clip(0,1)*255).astype(np.uint8)
     # overlayed_image = ((heatmap).clip(0, 1) * 255).astype(np.uint8)

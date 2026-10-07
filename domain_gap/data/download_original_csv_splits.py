@@ -77,6 +77,17 @@ def validate_files(sample, bucket):
     return validated, missing
 
 
+def validate_files_locally(sample, base_path):
+    """Confirm the required image/gt exist in the local mirror. Paths stay cloud relative and
+    optional gt_image/metadata are passed through unchecked, since the mirror may not hold them."""
+    missing = [{"path_type": key, "cloud_path": sample[key]}
+               for key in ("image_path", "gt_path")
+               if not (Path(base_path) / sample[key]).exists()]
+    if missing:
+        return None, missing
+    return dict(sample), []
+
+
 def response_data(samples, subset_name):
     return {
         "subset_name": subset_name,
@@ -163,11 +174,17 @@ def main():
     parser.add_argument("--kitti-val-share", type=float, default=0.6)
     parser.add_argument("--low-perf-val-share", type=float, default=0.9)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--local", action="store_true",
+                        help="validate against CONFIG['LOCAL_BASE_PATH'] instead of the bucket")
     args = parser.parse_args()
 
     rows = list(csv.DictReader(args.csv.open(newline="")))
     low_perf = load_low_perf_file_names(args.insight_csv)
-    bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
+    if args.local:
+        validate = lambda sample: validate_files_locally(sample, CONFIG['LOCAL_BASE_PATH'])
+    else:
+        bucket = _connect_to_gcs_and_return_bucket(CONFIG['BUCKET_NAME'])
+        validate = lambda sample: validate_files(sample, bucket)
     samples = []
     missing = []
 
@@ -184,7 +201,7 @@ def main():
             })
             continue
 
-        validated_sample, sample_missing = validate_files(sample, bucket)
+        validated_sample, sample_missing = validate(sample)
         if validated_sample is None:
             missing.append({
                 "dataset": sample["dataset"],

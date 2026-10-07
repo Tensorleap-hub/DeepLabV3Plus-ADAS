@@ -100,20 +100,25 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
     iou = iou.astype(np.float32)
     return iou
 
-def get_categorical_mask(idx: int, data: PreprocessResponse) -> np.ndarray:
+def row_index(sample_id: str, data: PreprocessResponse) -> int:
+    return data.data["id_to_idx"][sample_id]
+
+
+def get_categorical_mask(sample_id: str, data: PreprocessResponse) -> np.ndarray:
+    idx = row_index(sample_id, data)
     data = data.data
-    cloud_path = data['gt_path'][idx % data["real_size"]]
+    cloud_path = data['gt_path'][idx]
     fpath = cloud_path if os.path.exists(cloud_path) else _download(cloud_path)
     mask = np.array(Image.open(fpath).resize(CONFIG['IMAGE_SIZE'], Image.Resampling.NEAREST))
-    if data['dataset'][idx % data["real_size"]] == 'cityscapes':
+    if data['dataset'][idx] == 'cityscapes':
         encoded_mask = Cityscapes.encode_target_cityscapes(mask)
     else:
         encoded_mask = Cityscapes.encode_target(mask)
     return encoded_mask
 
 
-def get_metadata_json(idx: int, data: PreprocessResponse) -> Dict[str, str]:
-    cloud_path = data.data['metadata'][idx]
+def get_metadata_json(sample_id: str, data: PreprocessResponse) -> Dict[str, str]:
+    cloud_path = data.data['metadata'][row_index(sample_id, data)]
     if not cloud_path:
         return {}
     fpath = cloud_path if os.path.exists(cloud_path) else _download(cloud_path)

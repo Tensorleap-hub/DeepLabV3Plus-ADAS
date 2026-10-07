@@ -14,13 +14,26 @@ from code_loader.inner_leap_binder.leapbinder_decorators import tensorleap_prepr
 _SPLITS_DIR = join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "splits")
 
 
+def _assign_sample_ids(data: Dict) -> List[str]:
+    seen: Dict[str, int] = {}
+    sample_ids = []
+    for path, city in zip(data["image_path"], data["cities"]):
+        stem = os.path.splitext(os.path.basename(path))[0].replace("_leftImg8bit", "")
+        if stem.startswith(f"{city}_"):
+            stem = stem[len(city) + 1:]
+        sample_id = f"{city}/{stem}"
+        seen[sample_id] = seen.get(sample_id, 0) + 1
+        sample_ids.append(sample_id if seen[sample_id] == 1 else f"{sample_id}#{seen[sample_id]}")
+    data["id_to_idx"] = {sample_id: i for i, sample_id in enumerate(sample_ids)}
+    return sample_ids
+
+
 @tensorleap_preprocess()
 def subset_images() -> List[PreprocessResponse]:
     if not CONFIG['USE_LOCAL']:
         cs_dicts: List[Dict[str, Union[str, float, int]]] = get_cityscapes_data()
         kitti_data: Dict[str, List[str]] = get_kitti_data()
         sub_names = ["train", "validation"]
-        length_addition = [0, 0]
         for i, title in enumerate(sub_names):   # add kitti values
             cs_dicts[i]['image_path'] += kitti_data[title]['image_path']
             cs_dicts[i]['gt_path'] += kitti_data[title]['gt_path']
@@ -29,19 +42,15 @@ def subset_images() -> List[PreprocessResponse]:
             cs_dicts[i]['dataset'] += ['kitti'] * len(kitti_data[title]['image_path'])
             cs_dicts[i]['real_size'] += len(kitti_data[title]['image_path'])
             cs_dicts[i]['metadata'] += [""] * len(kitti_data[title]['image_path'])
-            length_addition[i] += len(kitti_data[title]['image_path'])
-        if CONFIG['OVERRIDE_SIZE']:
-            sizes = [CONFIG['TRAIN_SIZE'], CONFIG['VAL_SIZE']]
-        else:
-            sizes = [len(cs_dicts[i]['image_path']) + length_addition[i] for i in range(2)]
-        cs_responses = [PreprocessResponse(length=sizes[i], data=cs_dicts[i]) for i in range(len(cs_dicts))]
+        cs_responses = [PreprocessResponse(data=cs_dict, sample_ids=_assign_sample_ids(cs_dict), sample_id_type=str)
+                        for cs_dict in cs_dicts]
     else:
         with open(join(_SPLITS_DIR, "original_csv_subset", "train.json"), 'r') as f:
             train_data = json.load(f)
         with open(join(_SPLITS_DIR, "original_csv_subset", "val.json"), 'r') as f:
             val_data = json.load(f)
-        cs_responses = [PreprocessResponse(data=train_data, length=train_data["real_size"]),
-                         PreprocessResponse(data=val_data, length=val_data["real_size"])]
+        cs_responses = [PreprocessResponse(data=split, sample_ids=_assign_sample_ids(split), sample_id_type=str)
+                        for split in (train_data, val_data)]
     return cs_responses
 
 
@@ -86,4 +95,5 @@ def unlabeled_images() -> PreprocessResponse:
         "metadata": metadata,
         "real_size": len(image_path),
     }
-    return PreprocessResponse(length=len(image_path), data=data, state=DataStateType.unlabeled)
+    return PreprocessResponse(data=data, sample_ids=_assign_sample_ids(data), sample_id_type=str,
+                              state=DataStateType.unlabeled)

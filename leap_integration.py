@@ -27,13 +27,13 @@ def load_model():
     return cnn
 
 @tensorleap_integration_test()
-def check_custom_integration(idx, subset):
+def check_custom_integration(sample_id, subset):
     print("stated testing")
     plot = False
     model = load_model()
     # get plot images
-    norm_image = input_image(idx, subset)  # get specific image
-    non_norm_image = non_normalized_input_image(idx, subset)  # get specific image
+    norm_image = input_image(sample_id, subset)  # get specific image
+    non_norm_image = non_normalized_input_image(sample_id, subset)  # get specific image
 
     # predict
     y_pred = model([norm_image])  # infer and get model prediction
@@ -43,7 +43,7 @@ def check_custom_integration(idx, subset):
     un_norm_image_vis = image_visualizer_unnorm(non_norm_image)
 
     # get gt
-    mask_gt = ground_truth_mask(idx, subset)  # get image gt
+    mask_gt = ground_truth_mask(sample_id, subset)  # get image gt
 
 
     mask_gt_vis = mask_visualizer(norm_image, mask_gt)
@@ -68,11 +68,11 @@ def check_custom_integration(idx, subset):
     # print metadata
     for metadata_func in (metadata_idx, metadata_class_percent, metadata_gps_heading, metadata_gps_latitude,
                           metadata_gps_longtitude, metadata_outside_temperature, metadata_speed, metadata_yaw_rate):
-        print(metadata_func(idx, subset))
+        print(metadata_func(sample_id, subset))
 
 
 if __name__ == "__main__":
     responses = subset_images()  # get dataset splits
     for subset in responses:
-        for i in range(5):
-            check_custom_integration(i, subset)
+        for sample_id in subset.sample_ids[:5]:
+            check_custom_integration(sample_id, subset)
