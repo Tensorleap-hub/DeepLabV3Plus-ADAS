@@ -31,4 +31,4 @@ USE_LOCAL: True
 # Writable cache dir. Split recipes ship in the repo (domain_gap/data/splits); every
 # image/GT they reference is fetched from the datasets-reteai bucket by cloud path and
 # cached here on first use, so any writable path works on a fresh machine.
-LOCAL_BASE_PATH: /Users/orram/Tensorleap/data/domain-gap-2
+LOCAL_BASE_PATH: /tmp/domain-gap-cache
