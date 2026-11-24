@@ -88,8 +88,10 @@ leap auth login [api key] [api url].
 To deploy your local changes:
 
 ```
-leap project push models/DeeplabV3.h5
+leap push -m models/DeeplabV3.onnx
 ```
+
+`models/DeeplabV3.onnx` is exported from `models/DeeplabV3.h5`. To export it again after changing the Keras model, run `python models/export_onnx.py` (needs `tensorflow` and `tf2onnx`).
 
 ### **Tensorleap files**
 
