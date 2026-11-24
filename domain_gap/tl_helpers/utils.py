@@ -96,7 +96,7 @@ def mean_iou(y_true: np.ndarray, y_pred: np.ndarray):
 
     # Compute IoU, avoid division by zero. Empty GT against empty prediction is perfect
     # agreement -> 1.0; NaN here is stored as null and breaks downstream metric encoding.
-    iou = intersection / union if union > 0 else np.array([1.0] * y_true.shape[0])
+    iou = np.divide(intersection, union, out=np.ones_like(union), where=union > 0)
     iou = iou.astype(np.float32)
     return iou
 
